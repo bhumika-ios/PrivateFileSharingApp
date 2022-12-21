@@ -8,13 +8,16 @@
 import SwiftUI
 
 struct EnteryField: View {
+    var placeHolder: String
+    @Binding var field: String
+    var isSecure: Bool = false
     var body: some View {
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
     }
 }
 
-struct EnteryField_Previews: PreviewProvider {
-    static var previews: some View {
-        EnteryField()
-    }
-}
+//struct EnteryField_Previews: PreviewProvider {
+//    static var previews: some View {
+//        EnteryField()
+//    }
+//}
