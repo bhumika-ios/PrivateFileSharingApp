@@ -14,8 +14,13 @@ struct EnteryField: View {
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                
+                if isSecure{
+                    SecureField(placeHolder, text: $field).autocapitalization(.none)
+                } else {
+                    TextField(placeHolder, text: $field).autocapitalization(.none)
+                }
             }
+            .padding(8)
         }
     }
 }
