@@ -12,6 +12,7 @@
 		ACC2F5C729531E3D004F37A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC2F5C629531E3D004F37A7 /* Assets.xcassets */; };
 		ACC2F5CA29531E3D004F37A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC2F5C929531E3D004F37A7 /* Preview Assets.xcassets */; };
 		ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5D029531FAF004F37A7 /* LoginScreen.swift */; };
+		ACC2F5D329531FFE004F37A7 /* EnteryField.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5D229531FFE004F37A7 /* EnteryField.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		ACC2F5C629531E3D004F37A7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ACC2F5C929531E3D004F37A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACC2F5D029531FAF004F37A7 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
+		ACC2F5D229531FFE004F37A7 /* EnteryField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EnteryField.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,6 +55,7 @@
 		ACC2F5C129531E3B004F37A7 /* PrivateFileSharingApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACC2F5D429532002004F37A7 /* TextFieldComponent */,
 				ACC2F5C229531E3B004F37A7 /* PrivateFileSharingAppApp.swift */,
 				ACC2F5C429531E3B004F37A7 /* ContentView.swift */,
 				ACC2F5C629531E3D004F37A7 /* Assets.xcassets */,
@@ -68,6 +71,14 @@
 				ACC2F5C929531E3D004F37A7 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ACC2F5D429532002004F37A7 /* TextFieldComponent */ = {
+			isa = PBXGroup;
+			children = (
+				ACC2F5D229531FFE004F37A7 /* EnteryField.swift */,
+			);
+			path = TextFieldComponent;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -143,6 +154,7 @@
 				ACC2F5C529531E3B004F37A7 /* ContentView.swift in Sources */,
 				ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */,
 				ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */,
+				ACC2F5D329531FFE004F37A7 /* EnteryField.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
