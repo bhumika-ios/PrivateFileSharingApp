@@ -12,6 +12,9 @@ struct LoginScreen: View {
         VStack{
             Text("Welcome Back")
                 .font(.system(size: 32))
+            VStack{
+                EnteryField(placeHolder: "Email Address", field: <#T##Binding<String>#>)
+            }
         }
     }
 }
