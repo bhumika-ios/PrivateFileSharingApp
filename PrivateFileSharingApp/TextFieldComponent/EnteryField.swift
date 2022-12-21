@@ -12,7 +12,11 @@ struct EnteryField: View {
     @Binding var field: String
     var isSecure: Bool = false
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack(alignment: .leading){
+            HStack{
+                
+            }
+        }
     }
 }
 
