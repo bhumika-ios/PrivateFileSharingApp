@@ -49,8 +49,13 @@ struct LoginScreen: View {
                 })
                 {
                     HStack{
-                        Text("")
+                        Text("Don't have an account?")
+                            .foregroundColor(.black)
+                        
+                        Text("Register")
+                            .foregroundColor(.green)
                     }
+                    .font(.system(size: 22))
                 }
             }
         }

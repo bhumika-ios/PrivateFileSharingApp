@@ -11,7 +11,8 @@ import SwiftUI
 struct PrivateFileSharingAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+           // ContentView()
+            LoginScreen()
         }
     }
 }
