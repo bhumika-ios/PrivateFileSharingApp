@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct EnteryField: View {
+struct TextFieldComponent: View {
     var placeHolder: String
     @Binding var field: String
     var isSecure: Bool = false
@@ -21,11 +21,11 @@ struct EnteryField: View {
                 }
             }
             .padding(8)
-            .frame(height:50)
+            .frame(height:70)
             .backgroundStyle(Color(UIColor.secondarySystemBackground))
             .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
             .fixedSize(horizontal: false, vertical: true)
-            .font(.caption)
+           // .font()
         }
     }
 }
