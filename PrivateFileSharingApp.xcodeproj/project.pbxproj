@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC97C7462956DD4700F79594 /* Genos-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC97C7452956DD4700F79594 /* Genos-Regular.ttf */; };
+		AC97C7482956DEB300F79594 /* Genos-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC97C7472956DEB300F79594 /* Genos-Medium.ttf */; };
+		AC97C74A2956F29400F79594 /* TextFirstTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C7492956F29400F79594 /* TextFirstTitleComponent.swift */; };
+		AC97C74C2956F42800F79594 /* TextSubTitleComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C74B2956F42800F79594 /* TextSubTitleComponent.swift */; };
 		ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5C229531E3B004F37A7 /* PrivateFileSharingAppApp.swift */; };
 		ACC2F5C529531E3B004F37A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5C429531E3B004F37A7 /* ContentView.swift */; };
 		ACC2F5C729531E3D004F37A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC2F5C629531E3D004F37A7 /* Assets.xcassets */; };
@@ -17,6 +21,11 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC97C7442956D84200F79594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		AC97C7452956DD4700F79594 /* Genos-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Genos-Regular.ttf"; sourceTree = "<group>"; };
+		AC97C7472956DEB300F79594 /* Genos-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Genos-Medium.ttf"; sourceTree = "<group>"; };
+		AC97C7492956F29400F79594 /* TextFirstTitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFirstTitleComponent.swift; sourceTree = "<group>"; };
+		AC97C74B2956F42800F79594 /* TextSubTitleComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextSubTitleComponent.swift; sourceTree = "<group>"; };
 		ACC2F5BF29531E3B004F37A7 /* PrivateFileSharingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateFileSharingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC2F5C229531E3B004F37A7 /* PrivateFileSharingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateFileSharingAppApp.swift; sourceTree = "<group>"; };
 		ACC2F5C429531E3B004F37A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -42,8 +51,19 @@
 			isa = PBXGroup;
 			children = (
 				ACC2F5D229531FFE004F37A7 /* TextFieldComponent.swift */,
+				AC97C7492956F29400F79594 /* TextFirstTitleComponent.swift */,
+				AC97C74B2956F42800F79594 /* TextSubTitleComponent.swift */,
 			);
 			path = Component;
+			sourceTree = "<group>";
+		};
+		ACB5E8762955C8B000742DDD /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				AC97C7452956DD4700F79594 /* Genos-Regular.ttf */,
+				AC97C7472956DEB300F79594 /* Genos-Medium.ttf */,
+			);
+			path = Font;
 			sourceTree = "<group>";
 		};
 		ACC2F5B629531E3B004F37A7 = {
@@ -65,6 +85,8 @@
 		ACC2F5C129531E3B004F37A7 /* PrivateFileSharingApp */ = {
 			isa = PBXGroup;
 			children = (
+				AC97C7442956D84200F79594 /* Info.plist */,
+				ACB5E8762955C8B000742DDD /* Font */,
 				ACB5E87329559F1700742DDD /* Component */,
 				ACC2F5D52953253C004F37A7 /* ViewModel */,
 				ACC2F5C229531E3B004F37A7 /* PrivateFileSharingAppApp.swift */,
@@ -151,6 +173,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC2F5CA29531E3D004F37A7 /* Preview Assets.xcassets in Resources */,
+				AC97C7462956DD4700F79594 /* Genos-Regular.ttf in Resources */,
+				AC97C7482956DEB300F79594 /* Genos-Medium.ttf in Resources */,
 				ACC2F5C729531E3D004F37A7 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -163,9 +187,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				ACC2F5C529531E3B004F37A7 /* ContentView.swift in Sources */,
+				AC97C74A2956F29400F79594 /* TextFirstTitleComponent.swift in Sources */,
 				ACC2F5D72953258A004F37A7 /* FieldViewModel.swift in Sources */,
 				ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */,
 				ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */,
+				AC97C74C2956F42800F79594 /* TextSubTitleComponent.swift in Sources */,
 				ACC2F5D329531FFE004F37A7 /* TextFieldComponent.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -297,6 +323,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PrivateFileSharingApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrivateFileSharingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -325,6 +352,7 @@
 				DEVELOPMENT_ASSET_PATHS = "\"PrivateFileSharingApp/Preview Content\"";
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = PrivateFileSharingApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

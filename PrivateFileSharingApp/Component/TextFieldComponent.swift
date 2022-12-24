@@ -21,9 +21,14 @@ struct TextFieldComponent: View {
                 }
             }
             .padding(8)
-            .frame(height:70)
-            .backgroundStyle(Color(UIColor.secondarySystemBackground))
-            .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.gray, lineWidth: 1))
+            .frame(height:60)
+            //.background(Color("Gray"))
+            
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color("Gray"))
+            )
+            
             .fixedSize(horizontal: false, vertical: true)
            // .font()
         }

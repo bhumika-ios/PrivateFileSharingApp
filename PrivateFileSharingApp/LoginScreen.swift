@@ -11,17 +11,20 @@ struct LoginScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
     var body: some View {
         VStack{
-            
-//MARK:- Text add and set font size
-            Text("Welcome Back!")
-                .font(.system(size: 32).bold())
-            Text("Please type your email to log in")
-                .font(.system(size: 22))
             VStack{
-                VStack{
-                    TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
-                }
-                .padding()
+                //MARK:- Text add and set font size
+               TextFirstTitleComponent(title: "Welcome Back!")
+               
+               TextSubTitleComponent(subTitle: "Please type your email to log in")
+                   
+            }
+            .padding(.vertical,80)
+            VStack{
+                TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
+            }
+            .padding()
+            .padding(.vertical,-42)
+            VStack{
                 Button(action: {
                     
                     
@@ -29,21 +32,22 @@ struct LoginScreen: View {
                     HStack{
                         Text("Next Step ")
                             .foregroundColor(.black)
-                            .font(.system(size: 28))
+                            .font(.system(size: 18).bold())
                         Image(systemName: "chevron.forward")
                             .resizable()
-                            .frame(width: 15, height: 20)
+                            .frame(width: 12, height: 15)
                             .foregroundColor(.green)
                             .padding(.vertical, 5)
                             .padding(.horizontal)
                         //  .background(Capsule().fill(Color.blue))
                     }
-                    .frame(width:360 ,height:70)
-                    .backgroundStyle(Color(UIColor.secondarySystemBackground))
-                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(1), lineWidth: 1))
+                    .frame(width:360 ,height:60)
+                    
+                    .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(4), lineWidth: 2))
                     .fixedSize(horizontal: false, vertical: true)
                 }
-                .padding()
+            }
+                .padding(.vertical,45)
                 Button(action: {
                     
                 })
@@ -55,8 +59,8 @@ struct LoginScreen: View {
                         Text("Register")
                             .foregroundColor(.green)
                     }
-                    .font(.system(size: 22))
-                }
+                    .font(.system(size: 16))
+                
             }
         }
     }
