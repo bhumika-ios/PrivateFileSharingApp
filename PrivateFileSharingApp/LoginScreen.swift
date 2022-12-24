@@ -26,25 +26,22 @@ struct LoginScreen: View {
             .padding(.vertical,-40)
             
             VStack{
-                BtnComponent(action: {}) {
+                BtnBorderComponent(action: {}) {
                     Text("Next Step ")
                 }
-                .padding(.vertical,40)
+                .padding(.vertical,20)
             }
-                Button(action: {
-                    
-                })
-                {
+            .padding()
+            VStack{
+                BtnTextComponent(action: {}){
                     HStack{
                         Text("Don't have an account?")
-                            .foregroundColor(.black)
-                        
                         Text("Register")
                             .foregroundColor(.green)
                     }
-                    .font(.system(size: 16))
-                
+                }
             }
+               
         }
     }
 }

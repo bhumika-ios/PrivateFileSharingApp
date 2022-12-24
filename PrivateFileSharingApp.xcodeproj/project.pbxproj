@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		AC82347D295712DA0096AAB1 /* BtnComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82347C295712DA0096AAB1 /* BtnComponent.swift */; };
+		AC82347D295712DA0096AAB1 /* BtnBorderComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC82347C295712DA0096AAB1 /* BtnBorderComponent.swift */; };
+		AC823481295719AF0096AAB1 /* BtnTextComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC823480295719AF0096AAB1 /* BtnTextComponent.swift */; };
 		AC97C7462956DD4700F79594 /* Genos-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC97C7452956DD4700F79594 /* Genos-Regular.ttf */; };
 		AC97C7482956DEB300F79594 /* Genos-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC97C7472956DEB300F79594 /* Genos-Medium.ttf */; };
 		AC97C74A2956F29400F79594 /* TxtHeadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C7492956F29400F79594 /* TxtHeadingComponent.swift */; };
@@ -22,7 +23,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		AC82347C295712DA0096AAB1 /* BtnComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnComponent.swift; sourceTree = "<group>"; };
+		AC82347C295712DA0096AAB1 /* BtnBorderComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnBorderComponent.swift; sourceTree = "<group>"; };
+		AC823480295719AF0096AAB1 /* BtnTextComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BtnTextComponent.swift; sourceTree = "<group>"; };
 		AC97C7442956D84200F79594 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		AC97C7452956DD4700F79594 /* Genos-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Genos-Regular.ttf"; sourceTree = "<group>"; };
 		AC97C7472956DEB300F79594 /* Genos-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Genos-Medium.ttf"; sourceTree = "<group>"; };
@@ -55,7 +57,8 @@
 				ACC2F5D229531FFE004F37A7 /* TextFieldComponent.swift */,
 				AC97C7492956F29400F79594 /* TxtHeadingComponent.swift */,
 				AC97C74B2956F42800F79594 /* TxtTagComponent.swift */,
-				AC82347C295712DA0096AAB1 /* BtnComponent.swift */,
+				AC82347C295712DA0096AAB1 /* BtnBorderComponent.swift */,
+				AC823480295719AF0096AAB1 /* BtnTextComponent.swift */,
 			);
 			path = Component;
 			sourceTree = "<group>";
@@ -193,8 +196,9 @@
 				AC97C74A2956F29400F79594 /* TxtHeadingComponent.swift in Sources */,
 				ACC2F5D72953258A004F37A7 /* FieldViewModel.swift in Sources */,
 				ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */,
-				AC82347D295712DA0096AAB1 /* BtnComponent.swift in Sources */,
+				AC82347D295712DA0096AAB1 /* BtnBorderComponent.swift in Sources */,
 				ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */,
+				AC823481295719AF0096AAB1 /* BtnTextComponent.swift in Sources */,
 				AC97C74C2956F42800F79594 /* TxtTagComponent.swift in Sources */,
 				ACC2F5D329531FFE004F37A7 /* TextFieldComponent.swift in Sources */,
 			);

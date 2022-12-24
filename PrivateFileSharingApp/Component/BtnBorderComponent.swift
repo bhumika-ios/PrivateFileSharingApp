@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct BtnComponent<WhateverYourWant: View>: View {
+struct BtnBorderComponent<WhateverYourWant: View>: View {
     let action: () -> Void
     let content: WhateverYourWant
     
