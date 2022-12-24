@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextFirstTitleComponent: View {
+struct TxtHeadingComponent: View {
     var title: String
     var body: some View {
         VStack{
@@ -20,6 +20,6 @@ struct TextFirstTitleComponent: View {
 
 struct TextEditorComponent_Previews: PreviewProvider {
     static var previews: some View {
-        TextFirstTitleComponent(title: "first")
+        TxtHeadingComponent(title: "first")
     }
 }

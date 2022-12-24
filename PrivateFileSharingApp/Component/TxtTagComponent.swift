@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct TextSubTitleComponent: View {
+struct TxtTagComponent: View {
     var subTitle: String
     var body: some View {
        Text(subTitle)
@@ -18,6 +18,6 @@ struct TextSubTitleComponent: View {
 
 struct TextSubTitleComponent_Previews: PreviewProvider {
     static var previews: some View {
-        TextSubTitleComponent(subTitle: "SubTitle")
+        TxtTagComponent(subTitle: "SubTitle2")
     }
 }
