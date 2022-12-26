@@ -22,7 +22,7 @@ struct BtnTextComponent<WhateverYourWant: View>: View {
                     HStack{
                         content
                             .foregroundColor(.black)
-                            .font(.custom("Genos-Regular", size: 24))
+                            .font(.custom("Genos-Regular", size: 20))
                            
                     
                 }

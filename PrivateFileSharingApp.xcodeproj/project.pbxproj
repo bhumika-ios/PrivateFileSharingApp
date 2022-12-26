@@ -13,6 +13,8 @@
 		AC97C7482956DEB300F79594 /* Genos-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AC97C7472956DEB300F79594 /* Genos-Medium.ttf */; };
 		AC97C74A2956F29400F79594 /* TxtHeadingComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C7492956F29400F79594 /* TxtHeadingComponent.swift */; };
 		AC97C74C2956F42800F79594 /* TxtTagComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC97C74B2956F42800F79594 /* TxtTagComponent.swift */; };
+		ACA3D88C29596FFD0031547C /* LoginPasswordScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3D88B29596FFD0031547C /* LoginPasswordScreen.swift */; };
+		ACA3D88E295973D60031547C /* ForgottenScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACA3D88D295973D60031547C /* ForgottenScreen.swift */; };
 		ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5C229531E3B004F37A7 /* PrivateFileSharingAppApp.swift */; };
 		ACC2F5C529531E3B004F37A7 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5C429531E3B004F37A7 /* ContentView.swift */; };
 		ACC2F5C729531E3D004F37A7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC2F5C629531E3D004F37A7 /* Assets.xcassets */; };
@@ -30,6 +32,8 @@
 		AC97C7472956DEB300F79594 /* Genos-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Genos-Medium.ttf"; sourceTree = "<group>"; };
 		AC97C7492956F29400F79594 /* TxtHeadingComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtHeadingComponent.swift; sourceTree = "<group>"; };
 		AC97C74B2956F42800F79594 /* TxtTagComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TxtTagComponent.swift; sourceTree = "<group>"; };
+		ACA3D88B29596FFD0031547C /* LoginPasswordScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginPasswordScreen.swift; sourceTree = "<group>"; };
+		ACA3D88D295973D60031547C /* ForgottenScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgottenScreen.swift; sourceTree = "<group>"; };
 		ACC2F5BF29531E3B004F37A7 /* PrivateFileSharingApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PrivateFileSharingApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ACC2F5C229531E3B004F37A7 /* PrivateFileSharingAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrivateFileSharingAppApp.swift; sourceTree = "<group>"; };
 		ACC2F5C429531E3B004F37A7 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -51,6 +55,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		ACA3D88A29596FB30031547C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				ACC2F5D029531FAF004F37A7 /* LoginScreen.swift */,
+				ACA3D88B29596FFD0031547C /* LoginPasswordScreen.swift */,
+				ACA3D88D295973D60031547C /* ForgottenScreen.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		ACB5E87329559F1700742DDD /* Component */ = {
 			isa = PBXGroup;
 			children = (
@@ -91,6 +105,7 @@
 		ACC2F5C129531E3B004F37A7 /* PrivateFileSharingApp */ = {
 			isa = PBXGroup;
 			children = (
+				ACA3D88A29596FB30031547C /* View */,
 				AC97C7442956D84200F79594 /* Info.plist */,
 				ACB5E8762955C8B000742DDD /* Font */,
 				ACB5E87329559F1700742DDD /* Component */,
@@ -99,7 +114,6 @@
 				ACC2F5C429531E3B004F37A7 /* ContentView.swift */,
 				ACC2F5C629531E3D004F37A7 /* Assets.xcassets */,
 				ACC2F5C829531E3D004F37A7 /* Preview Content */,
-				ACC2F5D029531FAF004F37A7 /* LoginScreen.swift */,
 			);
 			path = PrivateFileSharingApp;
 			sourceTree = "<group>";
@@ -195,7 +209,9 @@
 				ACC2F5C529531E3B004F37A7 /* ContentView.swift in Sources */,
 				AC97C74A2956F29400F79594 /* TxtHeadingComponent.swift in Sources */,
 				ACC2F5D72953258A004F37A7 /* FieldViewModel.swift in Sources */,
+				ACA3D88E295973D60031547C /* ForgottenScreen.swift in Sources */,
 				ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */,
+				ACA3D88C29596FFD0031547C /* LoginPasswordScreen.swift in Sources */,
 				AC82347D295712DA0096AAB1 /* BtnBorderComponent.swift in Sources */,
 				ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */,
 				AC823481295719AF0096AAB1 /* BtnTextComponent.swift in Sources */,

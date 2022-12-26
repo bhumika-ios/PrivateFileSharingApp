@@ -13,9 +13,10 @@ struct TextFieldComponent: View {
     var isSecure: Bool = false
     var body: some View {
         VStack(alignment: .leading){
-            HStack{
+            VStack{
                 if isSecure{
                     SecureField(placeHolder, text: $field).autocapitalization(.none)
+                        
                 } else {
                     TextField(placeHolder, text: $field).autocapitalization(.none)
                 }
