@@ -9,4 +9,6 @@ import Foundation
 class FieldViewModel: ObservableObject{
     @Published var email = ""
     @Published var password = ""
+    @Published var fullName = ""
+    @Published var conPassword = ""
 }
