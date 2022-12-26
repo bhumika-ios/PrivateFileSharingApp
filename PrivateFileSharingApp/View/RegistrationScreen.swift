@@ -9,6 +9,10 @@ import SwiftUI
 
 struct RegistrationScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
+    @ObservedObject var emailObj = EmailValidationobj()
+    @ObservedObject var passObj = PasswordValidationobj()
+    @ObservedObject var conPassObj = ConPasswordValidationobj()
+    @ObservedObject var name = NameValidationobj()
     var body: some View {
         VStack{
             VStack{
@@ -19,16 +23,26 @@ struct RegistrationScreen: View {
                    
             }
             .padding(.vertical,60)
+            Group{
+                VStack(alignment:.leading){
+                    TxtTagComponent(subTitle: "Email")
+                    TextFieldComponent(placeHolder: "Email Address", field: $emailObj.email)
+                    TxtErrorComponent(error: emailObj.error)
+                    TxtTagComponent(subTitle: "Full Name")
+                    TextFieldComponent(placeHolder: "Full Name", field: $name.fullName)
+                    TxtErrorComponent(error: name.error)
+                    TxtTagComponent(subTitle: "Create Password")
+                    TextFieldComponent(placeHolder: "Password", field:$passObj.password, isSecure: true)
+                    TxtErrorComponent(error: passObj.error)
+                    }
+                .padding()
+                }
             VStack(alignment:.leading){
-                TxtTagComponent(subTitle: "Email")
-                TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
-                TxtTagComponent(subTitle: "Full Name")
-                TextFieldComponent(placeHolder: "Full Name", field: $fieldVM.fullName)
-                TxtTagComponent(subTitle: "Create Password")
-                TextFieldComponent(placeHolder: "Password", field: $fieldVM.password, isSecure: true)
                 TxtTagComponent(subTitle: "Confirm Password")
-                TextFieldComponent(placeHolder: "Confirm Password", field: $fieldVM.conPassword, isSecure: true)
+                TextFieldComponent(placeHolder: "Confirm Password", field: $conPassObj.conPassword, isSecure: true)
+                TxtErrorComponent(error: conPassObj.error)
             }
+            
             .padding()
             .padding(.vertical,-30)
             //.padding()
@@ -50,10 +64,10 @@ struct RegistrationScreen: View {
                 }
             .padding(.vertical,10)
             VStack{
-                BtnBorderComponent(action: {}) {
-                    Text("Next Step ")
-                }
-                .padding(.vertical,20)
+//                BtnBorderComponent(action: {}) {
+//                    Text("Next Step ")
+//                }
+//                .padding(.vertical,20)
             }
            
            

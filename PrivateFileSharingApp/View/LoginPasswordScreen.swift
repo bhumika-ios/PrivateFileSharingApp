@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginPasswordScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
+    @ObservedObject var passObj = PasswordValidationobj()
     var body: some View {
        
             VStack{
@@ -20,8 +21,9 @@ struct LoginPasswordScreen: View {
                        
                 }
                 .padding(.vertical,80)
-                VStack{
-                    TextFieldComponent(placeHolder: "Password", field: $fieldVM.password, isSecure: true)
+                VStack(alignment: .leading){
+                    TextFieldComponent(placeHolder: "Password", field: $passObj.password, isSecure: true)
+                    Text(passObj.error).foregroundColor(.red).font(.system(size: 13))
                 }
                 .padding()
                 .padding(.vertical,-40)
@@ -34,7 +36,9 @@ struct LoginPasswordScreen: View {
                 }
                 .padding()
                 VStack{
-                    BtnTextComponent(action: {}){
+                    BtnTextComponent(action: {
+                      //  ForgottenScreen()
+                    }){
                         HStack{
                             Text("Forgotten your password?")
                             Text("Reset Password.")

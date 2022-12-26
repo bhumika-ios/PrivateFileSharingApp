@@ -13,16 +13,15 @@ struct TextFieldComponent: View {
     var isSecure: Bool = false
     var body: some View {
         VStack(alignment: .leading){
-            VStack{
+            HStack{
                 if isSecure{
                     SecureField(placeHolder, text: $field).autocapitalization(.none)
-                        
                 } else {
                     TextField(placeHolder, text: $field).autocapitalization(.none)
                 }
             }
             .padding(8)
-            .font(.custom("Genos-Regular", size: 24))
+            .font(.custom("Genos-Regular", size: 18))
             .frame(height:60)
             //.background(Color("Gray"))
             

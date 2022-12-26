@@ -9,6 +9,7 @@ import SwiftUI
 
 struct LoginScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
+    @ObservedObject var emailObj = EmailValidationobj()
     var body: some View {
         VStack{
             VStack{
@@ -19,14 +20,17 @@ struct LoginScreen: View {
                    
             }
             .padding(.vertical,80)
-            VStack{
-                TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
+            VStack(alignment: .leading){
+                TextFieldComponent(placeHolder: "Email Address", field: $emailObj.email)
+                Text(emailObj.error).foregroundColor(.red).font(.system(size: 13))
             }
             .padding()
             .padding(.vertical,-40)
             
             VStack{
-                BtnBorderComponent(action: {}) {
+                BtnBorderComponent(action: {
+                    
+                }) {
                     Text("Next Step ")
                 }
                 .padding(.vertical,20)

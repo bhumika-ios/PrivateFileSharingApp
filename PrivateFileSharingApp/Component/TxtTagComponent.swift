@@ -18,7 +18,7 @@ struct TxtTagComponent: View {
       
 }
 
-struct TextSubTitleComponent_Previews: PreviewProvider {
+struct TxtTagComponent_Previews: PreviewProvider {
     static var previews: some View {
         TxtTagComponent(subTitle: "SubTitle2")
     }
