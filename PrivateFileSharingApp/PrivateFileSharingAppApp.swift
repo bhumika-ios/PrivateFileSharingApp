@@ -14,7 +14,8 @@ struct PrivateFileSharingAppApp: App {
            // ContentView()
            // LoginScreen()
            // LoginPasswordScreen()
-            ForgottenScreen()
+          //  ForgottenScreen()
+            RegistrationScreen()
         }
     }
 }

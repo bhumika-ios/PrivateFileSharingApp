@@ -10,8 +10,10 @@ import SwiftUI
 struct TxtTagComponent: View {
     var subTitle: String
     var body: some View {
-       Text(subTitle)
-            .font(.custom("Genos-Regular", size: 22))
+        VStack{
+            Text(subTitle)
+                .font(.custom("Genos-Regular", size: 22))
+        }
     }
       
 }
