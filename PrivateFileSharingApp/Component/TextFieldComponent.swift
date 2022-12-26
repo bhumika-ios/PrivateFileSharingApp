@@ -21,6 +21,7 @@ struct TextFieldComponent: View {
                 }
             }
             .padding(8)
+            .font(.custom("Genos-Regular", size: 24))
             .frame(height:60)
             //.background(Color("Gray"))
             
