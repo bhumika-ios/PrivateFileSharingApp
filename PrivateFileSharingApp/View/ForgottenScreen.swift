@@ -8,8 +8,41 @@
 import SwiftUI
 
 struct ForgottenScreen: View {
+    @ObservedObject var fieldVM = FieldViewModel()
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        VStack{
+            VStack{
+                //MARK:- Text add and set font size
+               TxtHeadingComponent(title: "Forgotten Password?")
+               
+               TxtTagComponent(subTitle: "Get reset link with your email")
+                   
+            }
+            .padding(.vertical,80)
+            VStack{
+                TextFieldComponent(placeHolder: "Type your E-mail", field: $fieldVM.email)
+            }
+            .padding()
+            .padding(.vertical,-40)
+            
+            VStack{
+                BtnBorderComponent(action: {}) {
+                    Text("Get Link ")
+                }
+                .padding(.vertical,20)
+            }
+            .padding()
+            VStack{
+                BtnTextComponent(action: {}){
+                    HStack{
+                        Text("Remember your password?")
+                        Text("Log In")
+                            .foregroundColor(.green)
+                    }
+                }
+            }
+               
+        }
     }
 }
 

@@ -13,7 +13,7 @@ struct TxtHeadingComponent: View {
         VStack{
             Text(title)
         }
-        .font(.custom("Genos-Medium", size: 32))
+        .font(.custom("Genos-Medium", size: 34))
         .padding(.vertical,-2)
     }
 }

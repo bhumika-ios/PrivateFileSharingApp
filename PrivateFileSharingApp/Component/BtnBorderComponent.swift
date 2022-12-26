@@ -21,7 +21,7 @@ struct BtnBorderComponent<WhateverYourWant: View>: View {
                 Button(action: action){
                     HStack{
                         content
-                            .font(.custom("Genos-Medium", size: 24))
+                            .font(.custom("Genos-Medium", size: 26))
                             .foregroundColor(.black)
                         Image(systemName: "chevron.forward")
                             .resizable()

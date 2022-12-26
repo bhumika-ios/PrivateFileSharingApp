@@ -13,7 +13,8 @@ struct PrivateFileSharingAppApp: App {
         WindowGroup {
            // ContentView()
            // LoginScreen()
-            LoginPasswordScreen()
+           // LoginPasswordScreen()
+            ForgottenScreen()
         }
     }
 }
