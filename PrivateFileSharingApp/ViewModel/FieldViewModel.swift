@@ -11,4 +11,7 @@ class FieldViewModel: ObservableObject{
     @Published var password = ""
     @Published var fullName = ""
     @Published var conPassword = ""
+    
+    
+    
 }

@@ -11,7 +11,7 @@ struct RegistrationScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
     @ObservedObject var emailObj = EmailValidationobj()
     @ObservedObject var passObj = PasswordValidationobj()
-    @ObservedObject var conPassObj = ConPasswordValidationobj()
+  //  @ObservedObject var conPassObj = ConPasswordValidationobj()
     @ObservedObject var name = NameValidationobj()
     var body: some View {
         VStack{
@@ -39,8 +39,8 @@ struct RegistrationScreen: View {
                 }
             VStack(alignment:.leading){
                 TxtTagComponent(subTitle: "Confirm Password")
-                TextFieldComponent(placeHolder: "Confirm Password", field: $conPassObj.conPassword, isSecure: true)
-                TxtErrorComponent(error: conPassObj.error)
+                TextFieldComponent(placeHolder: "Confirm Password", field: $fieldVM.conPassword, isSecure: true)
+               // TxtErrorComponent(error: conPassObj.error)
             }
             
             .padding()

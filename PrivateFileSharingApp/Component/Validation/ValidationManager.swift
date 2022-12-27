@@ -36,10 +36,10 @@ class PasswordValidationobj: ObservableObject {
         let setPassError = self.password.isPasswordValid() == false
         
         if setPassError{
-            if self.password.isEmpty{
-                self.error = "Required"
-                return
-            }
+//            if self.password.isEmpty{
+//                self.error = "Required"
+//                return
+//            }
             if self.password.count < 6 {
                 self.error = "Must be at least 6 characters."
                 return
@@ -81,21 +81,27 @@ class NameValidationobj: ObservableObject{
     @Published var error = ""
 }
 
-class ConPasswordValidationobj: ObservableObject{
-    @Published var conPassword = "" {
-        didSet {
-            self.isValidConPassword()
-        }
-    }
-    @Published var error = ""
-    private func isValidConPassword(){
-        if self.conPassword.isEmpty {
-            self.error = "Required"
-        }else{
-            self.error = ""
-        }
-            
-    }
-}
-
-
+//class ConPasswordValidationobj: ObservableObject{
+//    @Published var password = ""
+//    @Published var conPassword = "" {
+//        didSet {
+//            self.isValidConPassword()
+//        }
+//    }
+//    @Published var error = ""
+//    private func isValidConPassword(){
+//        if self.conPassword.isEmpty {
+//            self.error = "Required"
+//        }else if !self.passwordsMatch(){
+//            self.error = "Enter Same Password"
+//        }else{
+//            self.error = ""
+//        }
+//            
+//    }
+//    func passwordsMatch() -> Bool {
+//          password == conPassword
+//    }
+//}
+//
+//
