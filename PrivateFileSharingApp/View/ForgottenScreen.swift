@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ForgottenScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
-    @ObservedObject var emailObj = EmailValidationobj()
+   
     var body: some View {
         VStack{
             VStack{
@@ -21,8 +21,8 @@ struct ForgottenScreen: View {
             }
             .padding(.vertical,80)
             VStack(alignment: .leading){
-                TextFieldComponent(placeHolder: "Type your E-mail", field: $emailObj.email)
-                TxtErrorComponent(error: emailObj.error)
+                TextFieldComponent(placeHolder: "Type your E-mail", field: $fieldVM.email)
+                TxtErrorComponent(error: fieldVM.emailPrompt)
             }
             .padding()
             .padding(.vertical,-40)
