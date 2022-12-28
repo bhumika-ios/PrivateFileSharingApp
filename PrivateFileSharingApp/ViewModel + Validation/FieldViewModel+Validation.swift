@@ -1,8 +1,8 @@
 //
-//  FieldViewModel.swift
+//  FieldViewModel+Validation.swift
 //  PrivateFileSharingApp
 //
-//  Created by Bhumika Patel on 21/12/22.
+//  Created by Bhumika Patel on 28/12/22.
 //
 
 import Foundation
@@ -110,4 +110,5 @@ class FieldViewModel: ObservableObject{
     }
 
 }
+
 
