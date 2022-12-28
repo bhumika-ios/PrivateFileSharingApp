@@ -15,9 +15,9 @@ struct TextFieldComponent: View {
         VStack(alignment: .leading){
             HStack{
                 if isSecure{
-                    SecureField(placeHolder, text: $field)
+                    SecureField(placeHolder, text: $field).autocapitalization(.none)
                 } else {
-                    TextField(placeHolder, text: $field)
+                    TextField(placeHolder, text: $field).autocapitalization(.none)
                 }
             }
             .padding(8)

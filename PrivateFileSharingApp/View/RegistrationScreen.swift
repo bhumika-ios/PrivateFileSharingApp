@@ -11,8 +11,8 @@ struct RegistrationScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
     @ObservedObject var emailObj = EmailValidationobj()
     @ObservedObject var passObj = PasswordValidationobj()
-  //  @ObservedObject var conPassObj = ConPasswordValidationobj()
-    @ObservedObject var name = NameValidationobj()
+    @ObservedObject var conPassObj = ConPasswordValidationobj()
+    @ObservedObject var nameObj = NameValidationobj()
     var body: some View {
         VStack{
             VStack{
@@ -26,21 +26,34 @@ struct RegistrationScreen: View {
             Group{
                 VStack(alignment:.leading){
                     TxtTagComponent(subTitle: "Email")
-                    TextFieldComponent(placeHolder: "Email Address", field: $emailObj.email)
+                    TextFieldComponent(
+                        placeHolder: "Email Address",
+                        field: $emailObj.email
+                    )
                     TxtErrorComponent(error: emailObj.error)
+                    
                     TxtTagComponent(subTitle: "Full Name")
-                    TextFieldComponent(placeHolder: "Full Name", field: $name.fullName)
-                    TxtErrorComponent(error: name.error)
+                    TextFieldComponent(placeHolder: "Full Name", field: $nameObj.fullName)
+                    TxtErrorComponent(error: nameObj.error)
+                    
                     TxtTagComponent(subTitle: "Create Password")
                     TextFieldComponent(placeHolder: "Password", field:$passObj.password, isSecure: true)
                     TxtErrorComponent(error: passObj.error)
+                    
+                    //TxtTagComponent(subTitle: "Confirm Password")
+                    //TextFieldComponent(placeHolder: "Confirm Password", field: $conPassObj.conPassword, isSecure: true)
+                    //TxtErrorComponent(error: conPassObj.error)
+                    
                     }
                 .padding()
                 }
             VStack(alignment:.leading){
                 TxtTagComponent(subTitle: "Confirm Password")
-                TextFieldComponent(placeHolder: "Confirm Password", field: $fieldVM.conPassword, isSecure: true)
-               // TxtErrorComponent(error: conPassObj.error)
+                TextFieldComponent(
+                    placeHolder: "Confirm Password",
+                    field: $fieldVM.conPassword,
+                    isSecure: true)
+                TxtErrorComponent(error: conPassObj.error)
             }
             
             .padding()

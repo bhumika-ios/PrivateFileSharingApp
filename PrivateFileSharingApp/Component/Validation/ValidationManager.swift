@@ -65,6 +65,8 @@ class PasswordValidationobj: ObservableObject {
         }
     }
 }
+
+
 class NameValidationobj: ObservableObject{
     @Published var fullName = ""{
         didSet{
@@ -81,27 +83,27 @@ class NameValidationobj: ObservableObject{
     @Published var error = ""
 }
 
-//class ConPasswordValidationobj: ObservableObject{
-//    @Published var password = ""
-//    @Published var conPassword = "" {
-//        didSet {
-//            self.isValidConPassword()
-//        }
-//    }
-//    @Published var error = ""
-//    private func isValidConPassword(){
-//        if self.conPassword.isEmpty {
-//            self.error = "Required"
-//        }else if !self.passwordsMatch(){
-//            self.error = "Enter Same Password"
-//        }else{
-//            self.error = ""
-//        }
-//            
-//    }
-//    func passwordsMatch() -> Bool {
-//          password == conPassword
-//    }
-//}
-//
-//
+class ConPasswordValidationobj: ObservableObject{
+    @Published var password = ""
+    @Published var conPassword = "" {
+        didSet {
+            self.isValidConPassword()
+        }
+    }
+    @Published var error = ""
+    private func isValidConPassword(){
+        if self.conPassword.isEmpty {
+            self.error = "Required"
+        }else if !self.passwordsMatch(){
+            self.error = "Enter Same Password"
+        }else{
+            self.error = ""
+        }
+            
+    }
+    func passwordsMatch() -> Bool {
+          password == conPassword
+    }
+}
+
+
