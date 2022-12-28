@@ -41,3 +41,34 @@ struct TextFieldComponent: View {
 //        EnteryField()
 //    }
 //}
+struct TxtHeadingComponent: View {
+    var title: String
+    var body: some View {
+        VStack{
+            Text(title)
+        }
+        .font(.custom("Genos-Medium", size: 34))
+        .padding(.vertical,-2)
+    }
+}
+struct TxtTagComponent: View {
+    var subTitle: String
+    var body: some View {
+        VStack{
+            Text(subTitle)
+                .font(.custom("Genos-Regular", size: 22))
+        }
+    }
+      
+}
+struct TxtErrorComponent: View {
+    var error: String
+    var body: some View {
+        VStack{
+            Text(error)
+                .foregroundColor(.red)
+                .font(.system(size: 13))
+        }
+    }
+      
+}
