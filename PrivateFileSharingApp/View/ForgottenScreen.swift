@@ -30,9 +30,13 @@ struct ForgottenScreen: View {
             .padding(.vertical,-40)
             
             VStack{
-                BtnBorderComponent(action: {}) {
+                BtnBorderComponent(action: {
+                    self.fieldVM.emailConfirm()
+                }) {
                     Text("Get Link ")
                 }
+                .opacity(fieldVM.isEmailConfirmCompleted ? 1 : 0.6)
+                .disabled(!fieldVM.isEmailConfirmCompleted)
                 .padding(.vertical,20)
             }
             .padding()

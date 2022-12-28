@@ -31,10 +31,12 @@ struct LoginScreen: View {
             
             VStack{
                 BtnBorderComponent(action: {
-                    
+                    self.fieldVM.emailConfirm()
                 }) {
                     Text("Next Step ")
                 }
+                .opacity(fieldVM.isEmailConfirmCompleted ? 1 : 0.6)
+                .disabled(!fieldVM.isEmailConfirmCompleted)
                 .padding(.vertical,20)
             }
             .padding()

@@ -27,16 +27,19 @@ struct RegistrationScreen: View {
                             placeHolder: "Email Address",
                             field: $fieldVM.email
                         )
-                        TxtErrorComponent(error: fieldVM.emailPrompt)
-                        
+                        if !fieldVM.email.isEmpty{
+                            TxtErrorComponent(error: fieldVM.emailPrompt)
+                        }
                         TxtTagComponent(subTitle: "Full Name")
                         TextFieldComponent(placeHolder: "Full Name", field: $fieldVM.fullName)
-                        TxtErrorComponent(error: fieldVM.namePrompt)
-                        
+                        if !fieldVM.fullName.isEmpty{
+                            TxtErrorComponent(error: fieldVM.namePrompt)
+                        }
                         TxtTagComponent(subTitle: "Create Password")
                         TextFieldComponent(placeHolder: "Password", field:$fieldVM.password, isSecure: true)
-                        TxtErrorComponent(error:fieldVM.passwordPrompt)
-                        
+                        if !fieldVM.password.isEmpty{
+                            TxtErrorComponent(error:fieldVM.passwordPrompt)
+                        }
                         //TxtTagComponent(subTitle: "Confirm Password")
                         //TextFieldComponent(placeHolder: "Confirm Password", field: $conPassObj.conPassword, isSecure: true)
                         //TxtErrorComponent(error: conPassObj.error)
@@ -50,7 +53,9 @@ struct RegistrationScreen: View {
                         placeHolder: "Confirm Password",
                         field: $fieldVM.conPassword,
                         isSecure: true)
-                    TxtErrorComponent(error: fieldVM.confirmPwPrompt)
+                    if !fieldVM.conPassword.isEmpty{
+                        TxtErrorComponent(error: fieldVM.confirmPwPrompt)
+                    }
                 }
                 
                 .padding()
@@ -74,9 +79,13 @@ struct RegistrationScreen: View {
                 }
                 .padding(.vertical,10)
                 VStack{
-                                    BtnBorderComponent(action: {}) {
+                                    BtnBorderComponent(action: {
+                                        self.fieldVM.confirm()
+                                    }) {
                                         Text("Next Step ")
                                     }
+                                    .opacity(fieldVM.isConfirmCompleted ? 1 : 0.6)
+                                    .disabled(!fieldVM.isConfirmCompleted)
                                     .padding(.vertical,20)
                 }
                 

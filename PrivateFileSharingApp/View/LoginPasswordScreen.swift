@@ -31,9 +31,13 @@ struct LoginPasswordScreen: View {
                 .padding(.vertical,-40)
                 
                 VStack{
-                    BtnBorderComponent(action: {}) {
+                    BtnBorderComponent(action: {
+                        self.fieldVM.passwordConfirm()
+                    }) {
                         Text("Log In ")
                     }
+                    .opacity(fieldVM.isPasswordConfirmCompleted ? 1 : 0.6)
+                    .disabled(!fieldVM.isPasswordConfirmCompleted)
                     .padding(.vertical,20)
                 }
                 .padding()
