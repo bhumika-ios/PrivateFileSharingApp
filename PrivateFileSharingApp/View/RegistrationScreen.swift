@@ -93,6 +93,7 @@ struct RegistrationScreen: View {
                 
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

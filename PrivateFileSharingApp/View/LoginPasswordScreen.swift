@@ -9,16 +9,17 @@ import SwiftUI
 
 struct LoginPasswordScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
+    @State var isLinkActive = false
    
     var body: some View {
-       
+        NavigationView{
             VStack{
                 VStack{
                     //MARK:- Text add and set font size
-                   TxtHeadingComponent(title: "Are You XXX?")
-                   
-                   TxtTagComponent(subTitle: "Confirm you by your password")
-                       
+                    TxtHeadingComponent(title: "Are You XXX?")
+                    
+                    TxtTagComponent(subTitle: "Confirm you by your password")
+                    
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
@@ -42,18 +43,26 @@ struct LoginPasswordScreen: View {
                 }
                 .padding()
                 VStack{
-                    BtnTextComponent(action: {
-                      //  ForgottenScreen()
-                    }){
-                        HStack{
-                            Text("Forgotten your password?")
-                            Text("Reset Password.")
-                                .foregroundColor(.green)
+                    HStack{
+                        Text("Forgotten your password?")
+                        NavigationLink(destination: ForgottenScreen(), isActive: $isLinkActive){
+                            BtnTextComponent(action: {
+                                //  ForgottenScreen()
+                                self.isLinkActive = true
+                            }){
+                                
+                                
+                                Text("Reset Password.")
+                                    .foregroundColor(.green)
+                            }
                         }
                     }
                 }
-                   
+                
             }
+          
+        }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
