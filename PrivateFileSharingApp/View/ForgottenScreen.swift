@@ -22,7 +22,9 @@ struct ForgottenScreen: View {
             .padding(.vertical,80)
             VStack(alignment: .leading){
                 TextFieldComponent(placeHolder: "Type your E-mail", field: $fieldVM.email)
-                TxtErrorComponent(error: fieldVM.emailPrompt)
+                if !fieldVM.email.isEmpty{
+                    TxtErrorComponent(error: fieldVM.emailPrompt)
+                }
             }
             .padding()
             .padding(.vertical,-40)

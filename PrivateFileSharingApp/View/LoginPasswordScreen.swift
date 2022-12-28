@@ -23,7 +23,9 @@ struct LoginPasswordScreen: View {
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
                     TextFieldComponent(placeHolder: "Password", field: $fieldVM.password, isSecure: true)
-                    TxtErrorComponent(error: fieldVM.passwordPrompt)
+                    if !fieldVM.password.isEmpty{
+                        TxtErrorComponent(error: fieldVM.passwordPrompt)
+                    }
                 }
                 .padding()
                 .padding(.vertical,-40)
