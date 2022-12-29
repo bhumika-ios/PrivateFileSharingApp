@@ -15,7 +15,8 @@ struct MainFileListView: View {
                     HeaderView()
                         .padding()
                     HorizantalScrollingView()
-                    FileListView()
+                    //FileListView()
+                    FileGridView()
                 }
               //  .padding()
             }

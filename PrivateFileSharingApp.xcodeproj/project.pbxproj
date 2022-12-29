@@ -25,6 +25,7 @@
 		ACD6AACB295D622200748F8C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACA295D622200748F8C /* HeaderView.swift */; };
 		ACD6AACD295D625100748F8C /* MainFileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACC295D625100748F8C /* MainFileListView.swift */; };
 		ACD6AACF295D65C900748F8C /* HorizantalScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACE295D65C900748F8C /* HorizantalScrollingView.swift */; };
+		ACD6AAD1295D755400748F8C /* FileGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AAD0295D755400748F8C /* FileGridView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -48,6 +49,7 @@
 		ACD6AACA295D622200748F8C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		ACD6AACC295D625100748F8C /* MainFileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFileListView.swift; sourceTree = "<group>"; };
 		ACD6AACE295D65C900748F8C /* HorizantalScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizantalScrollingView.swift; sourceTree = "<group>"; };
+		ACD6AAD0295D755400748F8C /* FileGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGridView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 				ACD6AACA295D622200748F8C /* HeaderView.swift */,
 				ACD6AACC295D625100748F8C /* MainFileListView.swift */,
 				ACD6AACE295D65C900748F8C /* HorizantalScrollingView.swift */,
+				ACD6AAD0295D755400748F8C /* FileGridView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -223,6 +226,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ACD6AAD1295D755400748F8C /* FileGridView.swift in Sources */,
 				ACC2F5C529531E3B004F37A7 /* ContentView.swift in Sources */,
 				AC5FC498295C5AC900906E92 /* FieldViewModel+Validation.swift in Sources */,
 				ACA3D88E295973D60031547C /* ForgottenScreen.swift in Sources */,
