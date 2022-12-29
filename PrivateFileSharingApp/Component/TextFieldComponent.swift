@@ -54,7 +54,7 @@ struct TxtHeadingComponent: View {
 struct TxtTagComponent: View {
     var subTitle: String
     var body: some View {
-        VStack{
+        VStack(alignment: .leading){
             Text(subTitle)
                 .font(.custom("Genos-Regular", size: 22))
         }

@@ -22,6 +22,8 @@
 		ACC2F5CA29531E3D004F37A7 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ACC2F5C929531E3D004F37A7 /* Preview Assets.xcassets */; };
 		ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5D029531FAF004F37A7 /* LoginScreen.swift */; };
 		ACC2F5D329531FFE004F37A7 /* TextFieldComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACC2F5D229531FFE004F37A7 /* TextFieldComponent.swift */; };
+		ACD6AACB295D622200748F8C /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACA295D622200748F8C /* HeaderView.swift */; };
+		ACD6AACD295D625100748F8C /* MainFileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACC295D625100748F8C /* MainFileListView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -42,6 +44,8 @@
 		ACC2F5C929531E3D004F37A7 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		ACC2F5D029531FAF004F37A7 /* LoginScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScreen.swift; sourceTree = "<group>"; };
 		ACC2F5D229531FFE004F37A7 /* TextFieldComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldComponent.swift; sourceTree = "<group>"; };
+		ACD6AACA295D622200748F8C /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
+		ACD6AACC295D625100748F8C /* MainFileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFileListView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -79,6 +83,8 @@
 				ACA3D88D295973D60031547C /* ForgottenScreen.swift */,
 				ACA3D88F295976900031547C /* RegistrationScreen.swift */,
 				AC5FC49C295C5D8B00906E92 /* FileListView.swift */,
+				ACD6AACA295D622200748F8C /* HeaderView.swift */,
+				ACD6AACC295D625100748F8C /* MainFileListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -221,6 +227,8 @@
 				AC5FC49D295C5D8B00906E92 /* FileListView.swift in Sources */,
 				ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */,
 				ACA3D88C29596FFD0031547C /* LoginPasswordScreen.swift in Sources */,
+				ACD6AACB295D622200748F8C /* HeaderView.swift in Sources */,
+				ACD6AACD295D625100748F8C /* MainFileListView.swift in Sources */,
 				ACA3D890295976900031547C /* RegistrationScreen.swift in Sources */,
 				AC82347D295712DA0096AAB1 /* BtnBorderComponent.swift in Sources */,
 				ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */,
