@@ -26,6 +26,8 @@
 		ACD6AACD295D625100748F8C /* MainFileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACC295D625100748F8C /* MainFileListView.swift */; };
 		ACD6AACF295D65C900748F8C /* HorizantalScrollingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AACE295D65C900748F8C /* HorizantalScrollingView.swift */; };
 		ACD6AAD1295D755400748F8C /* FileGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AAD0295D755400748F8C /* FileGridView.swift */; };
+		ACD6AAD3295D851C00748F8C /* ProfileSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AAD2295D851C00748F8C /* ProfileSheet.swift */; };
+		ACD6AAD5295D90D900748F8C /* BlureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ACD6AAD4295D90D900748F8C /* BlureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -50,6 +52,8 @@
 		ACD6AACC295D625100748F8C /* MainFileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainFileListView.swift; sourceTree = "<group>"; };
 		ACD6AACE295D65C900748F8C /* HorizantalScrollingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HorizantalScrollingView.swift; sourceTree = "<group>"; };
 		ACD6AAD0295D755400748F8C /* FileGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileGridView.swift; sourceTree = "<group>"; };
+		ACD6AAD2295D851C00748F8C /* ProfileSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileSheet.swift; sourceTree = "<group>"; };
+		ACD6AAD4295D90D900748F8C /* BlureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -91,6 +95,8 @@
 				ACD6AACC295D625100748F8C /* MainFileListView.swift */,
 				ACD6AACE295D65C900748F8C /* HorizantalScrollingView.swift */,
 				ACD6AAD0295D755400748F8C /* FileGridView.swift */,
+				ACD6AAD2295D851C00748F8C /* ProfileSheet.swift */,
+				ACD6AAD4295D90D900748F8C /* BlureView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -233,7 +239,9 @@
 				AC5FC49B295C5B8F00906E92 /* FileListModel.swift in Sources */,
 				AC5FC49D295C5D8B00906E92 /* FileListView.swift in Sources */,
 				ACC2F5C329531E3B004F37A7 /* PrivateFileSharingAppApp.swift in Sources */,
+				ACD6AAD3295D851C00748F8C /* ProfileSheet.swift in Sources */,
 				ACA3D88C29596FFD0031547C /* LoginPasswordScreen.swift in Sources */,
+				ACD6AAD5295D90D900748F8C /* BlureView.swift in Sources */,
 				ACD6AACB295D622200748F8C /* HeaderView.swift in Sources */,
 				ACD6AACD295D625100748F8C /* MainFileListView.swift in Sources */,
 				ACA3D890295976900031547C /* RegistrationScreen.swift in Sources */,

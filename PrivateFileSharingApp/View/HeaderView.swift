@@ -8,14 +8,24 @@
 import SwiftUI
 
 struct HeaderView: View {
+    @State var showingBottomSheet = false
     var body: some View {
         VStack(alignment: .leading){
             HStack{
                 TxtHeadingComponent(title: "My Files")
                 Spacer()
-                Image(systemName: "line.horizontal.3")
-                    .resizable()
-                    .frame(width: 25,height: 13)
+                Button(action: {
+                    showingBottomSheet.toggle()
+                }){
+                    Image(systemName: "line.horizontal.3")
+                        .resizable()
+                        .frame(width: 25,height: 13)
+                }
+            }
+            .padding()
+            .sheet(isPresented: $showingBottomSheet){
+                ProfileSheet()
+                    .presentationDetents([.medium,.medium])
             }
         }
     }

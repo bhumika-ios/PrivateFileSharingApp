@@ -18,6 +18,7 @@ struct MainFileListView: View {
                     //FileListView()
                     FileGridView()
                 }
+               
               //  .padding()
             }
         }
