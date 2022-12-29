@@ -8,9 +8,11 @@
 import SwiftUI
 
 struct FileListView: View {
+    
+    var fileList: [FileModel] = FileList.list
     var body: some View {
         NavigationView{
-            List(0 ..< 20){ item in
+            List(fileList, id: \.id){ fileList in
                 HStack{
                     Image(systemName: "camera")
                         .resizable()
@@ -31,6 +33,7 @@ struct FileListView: View {
                 }
                 .padding()
             }
+            .listStyle(.inset)
            
             .navigationTitle("Files")
         }

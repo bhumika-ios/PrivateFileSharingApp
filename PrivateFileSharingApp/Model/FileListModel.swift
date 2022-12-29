@@ -7,7 +7,8 @@
 
 import SwiftUI
 
-struct FileModel {
+struct FileModel: Identifiable {
+    let id = UUID()
     let imageName: String
     let title: String
     let Description: String
