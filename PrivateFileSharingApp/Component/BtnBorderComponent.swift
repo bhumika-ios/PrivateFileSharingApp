@@ -10,7 +10,7 @@ import SwiftUI
 struct BtnBorderComponent<WhateverYourWant: View>: View {
     let action: () -> Void
     let content: WhateverYourWant
-    @ObservedObject var fieldVM = FieldViewModel()
+   // @ObservedObject var fieldVM = FieldViewModel()
     init(action: @escaping () -> Void, @ViewBuilder content: () -> WhateverYourWant) {
         self.action = action
         self.content = content()

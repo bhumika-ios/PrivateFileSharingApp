@@ -13,6 +13,8 @@ struct MainFileListView: View {
             VStack{
                 VStack(alignment: .leading){
                     HeaderView()
+                        .padding()
+                    HorizantalScrollingView()
                     FileListView()
                 }
                 .padding()
