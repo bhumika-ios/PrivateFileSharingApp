@@ -14,18 +14,18 @@ struct FileListView: View {
         NavigationView{
             List(fileList, id: \.id){ fileList in
                 HStack{
-                    Image(systemName: "camera")
+                    Image(fileList.imageName)
                         .resizable()
                         .scaledToFit()
-                        .frame(height: 70)
+                        .frame(height: 60)
                         .cornerRadius(4)
                     VStack(alignment: .leading, spacing: 2){
-                        Text("fgbfgbdfgdfgb")
+                        Text(fileList.title)
                             .font(.custom("Genos-Regular", size: 24))
                             .fontWeight(.semibold)
                             .lineLimit(2)
                             .minimumScaleFactor(0.5)
-                        Text("january 1, 2022")
+                        Text(fileList.uploadingDate)
                             .font(.subheadline)
                             .foregroundColor(.secondary)
                     }
