@@ -33,9 +33,14 @@ struct FileListView: View {
                                     .font(.subheadline)
                                     .foregroundColor(.secondary)
                             }
-                            .padding()
+                            Spacer()
+                            Image(fileList.imageName1)
+                                .resizable()
+                                .scaledToFit()
+                                .frame(width: 60,height: 30)
+                           // .padding()
                         }
-                        .padding()
+                        //.padding()
                     }
                     .listStyle(.inset)
                 }
