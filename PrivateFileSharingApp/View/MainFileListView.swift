@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MainFileListView: View {
+   
     var body: some View {
         NavigationView{
             VStack{
@@ -15,10 +16,11 @@ struct MainFileListView: View {
                     HeaderView()
                         .padding()
                     HorizantalScrollingView()
+             
                     //FileListView()
-                    FileGridView()
+                   // FileGridView()
                 }
-               
+               //ProfileSheet()
               //  .padding()
             }
         }

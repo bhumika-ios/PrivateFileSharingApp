@@ -37,3 +37,4 @@ struct FileList{
     FileModel(imageName: "folder", title: "pp", Description: "dxvdxvgsdjkjhgvsdvgdsdsf", viewCount: 7, uploadingDate: "february 25,2022")
     ]
 }
+

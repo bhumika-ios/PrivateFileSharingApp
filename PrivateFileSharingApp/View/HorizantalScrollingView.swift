@@ -8,16 +8,20 @@
 import SwiftUI
 
 struct HorizantalScrollingView: View {
+    var fileList: [FileModel] = FileList.list
+    @State var showList = false
+    @State var selectedLayout : LayoutType = .single
     var body: some View {
+        NavigationView{
         VStack{
-            ScrollView(.horizontal){
+            ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 10){
                     BtnScrollComponent(action: {
                         
                     }){
-                       
+                        
                         HStack{
-                           
+                            
                             Image(systemName: "menucard.fill")
                             Text("My Files")
                         }
@@ -33,25 +37,82 @@ struct HorizantalScrollingView: View {
                     BtnScrollComponent(action: {
                         
                     }){
-                       
+                        
                         HStack{
                             Image(systemName: "checkmark.square")
                             Text("Select")
                         }
                     }
-                    BtnScrollComponent(action: {
-                        
-                    }){
-                       
-                        HStack{
-                            Image(systemName: "slider.horizontal.below.square.fill.and.square")
+                    BtnScrollComponent(action: {}){
+                        VStack{
+                            Picker("Layout", selection: $selectedLayout) {
+                                ForEach(LayoutType.allCases, id: \.self) { type in
+                                    switch type{
+                                    case .single:
+                                       // Text("List")
+                                        HStack{
+                                            Image(systemName: "list.bullet")
+                                            Text("ListView")
+                                                .foregroundColor(.black)
+                                        }
+                                        
+                                    case .grid:
+                                        HStack{
+                                            Image(systemName: "square.grid.3x3")
+                                            Text("GridView")
+                                                .foregroundColor(.black)
+                                        }
+                                       // Image(systemName: "square.grid.2*2")
+                                    }
+                                }
+                            }
+                            .pickerStyle(.menu)
                            
-                            Text("View")
                         }
+                        
+                        
                     }
+                    .foregroundColor(.black)
+//                        BtnScrollComponent(action: {
+//                            if showList == true{
+//                                showList.toggle()
+//                            }
+//                        }){
+//                            // Image(systemName: "square.grid.3x3.fill")
+//                            HStack{
+//                                //Image(systemName: "square.split.2x2.fill")
+//                                Image(systemName: showList ?  "square.grid.3x3.fill" : "square.fill.text.grid.1x2")
+//                                // Image(systemName: "square.fill.text.grid.1x2")
+//
+//                                Text( showList ? "GridView" : "ListView")
+//                            }
+//
+//                    }
+                    
+                    }
+                }
+            ScrollView{
+                LazyVGrid(columns: selectedLayout.columns, spacing: 1) {
+                    ForEach(fileList) { list in
+                        switch(selectedLayout){
+                        case.single:
+                            FileListView(imageName: list.imageName, title: list.title, uploadingDate: list.uploadingDate)
+                        default:
+                            FileGridView(imageName: list.imageName, title: list.title, uploadingDate:list.uploadingDate)
+                           
+                        }
+                           
+                    }
+                    
+                }
+                
+            }
+            
                    
                 }
-            }
+           
+        
+        
         }
     }
 }

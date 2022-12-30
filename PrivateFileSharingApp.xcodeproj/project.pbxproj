@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AC077CBD295EB53800802041 /* LayoutType.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC077CBC295EB53800802041 /* LayoutType.swift */; };
 		AC5FC498295C5AC900906E92 /* FieldViewModel+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC497295C5AC900906E92 /* FieldViewModel+Validation.swift */; };
 		AC5FC49B295C5B8F00906E92 /* FileListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC49A295C5B8F00906E92 /* FileListModel.swift */; };
 		AC5FC49D295C5D8B00906E92 /* FileListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AC5FC49C295C5D8B00906E92 /* FileListView.swift */; };
@@ -31,6 +32,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AC077CBC295EB53800802041 /* LayoutType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LayoutType.swift; sourceTree = "<group>"; };
 		AC5FC497295C5AC900906E92 /* FieldViewModel+Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "FieldViewModel+Validation.swift"; sourceTree = "<group>"; };
 		AC5FC49A295C5B8F00906E92 /* FileListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListModel.swift; sourceTree = "<group>"; };
 		AC5FC49C295C5D8B00906E92 /* FileListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileListView.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				AC5FC49A295C5B8F00906E92 /* FileListModel.swift */,
+				AC077CBC295EB53800802041 /* LayoutType.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +248,7 @@
 				ACD6AACB295D622200748F8C /* HeaderView.swift in Sources */,
 				ACD6AACD295D625100748F8C /* MainFileListView.swift in Sources */,
 				ACA3D890295976900031547C /* RegistrationScreen.swift in Sources */,
+				AC077CBD295EB53800802041 /* LayoutType.swift in Sources */,
 				AC82347D295712DA0096AAB1 /* BtnBorderComponent.swift in Sources */,
 				ACC2F5D129531FAF004F37A7 /* LoginScreen.swift in Sources */,
 				ACD6AACF295D65C900748F8C /* HorizantalScrollingView.swift in Sources */,
