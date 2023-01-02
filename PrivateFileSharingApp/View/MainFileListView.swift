@@ -24,6 +24,7 @@ struct MainFileListView: View {
               //  .padding()
             }
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 

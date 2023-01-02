@@ -85,7 +85,7 @@ struct LoginPassword: View {
             }
           
         }
-        .navigationBarBackButtonHidden(true)
+       // .navigationBarBackButtonHidden(true)
     }
     func authenticatePass(pass: String) {
         if pass == "Bhumi@123" {
