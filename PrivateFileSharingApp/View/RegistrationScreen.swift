@@ -11,6 +11,8 @@ struct RegistrationScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
     @State var visible = false
     @State var reVisible = false
+    @State private var showAlert = false
+   
     var body: some View {
         ScrollView(showsIndicators: false){
             VStack{
@@ -86,12 +88,18 @@ struct RegistrationScreen: View {
                 VStack{
                                     BtnBorderComponent(action: {
                                         self.fieldVM.confirm()
+                                            showAlert = true
+                                        
                                     }) {
                                         Text("Next Step ")
                                     }
                                     .opacity(fieldVM.isConfirmCompleted ? 1 : 0.6)
                                     .disabled(!fieldVM.isConfirmCompleted)
                                     .padding(.vertical,20)
+                    
+                                    .alert(isPresented: $showAlert){
+                                        Alert(title: Text("Successfully Register"))
+                                    }
                 }
                 
                 
