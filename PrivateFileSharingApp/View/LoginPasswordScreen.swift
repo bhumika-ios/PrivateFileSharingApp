@@ -30,6 +30,11 @@ struct LoginPassword: View {
         NavigationStack{
             VStack{
                 VStack{
+                    Image("profilePic")
+                        .resizable()
+                        .frame(width: 100, height: 100)
+                        .cornerRadius(10)
+                       
                     //MARK:- Text add and set font size
                     TxtHeadingComponent(title: "Are You XXX?")
                     
@@ -38,7 +43,7 @@ struct LoginPassword: View {
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
-                    TextFieldComponent(placeHolder: "Password", field: $fieldVM.password, isSecure: true)
+                  TxtSecureComponent(placeHolder: "Password", field: $fieldVM.password)
                     if !fieldVM.password.isEmpty{
                         TxtErrorComponent(error: fieldVM.passwordPrompt)
                     }

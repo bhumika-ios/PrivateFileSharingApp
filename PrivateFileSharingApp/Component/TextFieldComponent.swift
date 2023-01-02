@@ -10,14 +10,54 @@ import SwiftUI
 struct TextFieldComponent: View {
     var placeHolder: String
     @Binding var field: String
+    @State var visible = false
+    @State var reVisible = false
     var isSecure: Bool = false
     var body: some View {
         VStack(alignment: .leading){
             HStack{
-                if isSecure{
-                    SecureField(placeHolder, text: $field).autocapitalization(.none)
-                } else {
                     TextField(placeHolder, text: $field).autocapitalization(.none)
+
+            
+            }
+            .padding(8)
+            .font(.custom("Genos-Regular", size: 18))
+            .frame(height:60)
+            //.background(Color("Gray"))
+            
+            .background(
+                RoundedRectangle(cornerRadius: 10)
+                    .fill(Color("Gray"))
+            )
+            
+            .fixedSize(horizontal: false, vertical: true)
+           // .font()
+        }
+    }
+}
+struct TxtSecureComponent: View {
+    var placeHolder: String
+    @Binding var field: String
+    @State var visible = false
+    @State var reVisible = false
+    var isSecure: Bool = false
+    var body: some View {
+        VStack(alignment: .leading){
+            HStack{
+             
+                    if self.visible{
+                        TextField(placeHolder, text: $field).autocapitalization(.none)
+                    }else{
+                        SecureField(placeHolder, text: $field).autocapitalization(.none)
+                    }
+                   
+               
+                   
+                Button(action: {
+                    self.visible.toggle()
+                }) {
+                    Image(systemName: self.visible ? "eye.slash.fill" : "eye.fill")
+                        .foregroundColor(.black)
                 }
             }
             .padding(8)

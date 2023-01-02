@@ -14,7 +14,7 @@ struct HorizantalScrollingView: View {
     var body: some View {
         NavigationView{
         VStack{
-            ScrollView(.horizontal, showsIndicators: false){
+          //  ScrollView(.horizontal, showsIndicators: false){
                 HStack(spacing: 10){
                     BtnScrollComponent(action: {
                         
@@ -23,26 +23,22 @@ struct HorizantalScrollingView: View {
                         HStack{
                             
                             Image(systemName: "menucard.fill")
-                            Text("My Files")
+                                .resizable()
+                                .frame(width: 20, height:30)
+                           // Text("My Files")
                         }
                     }
                     BtnScrollComponent(action: {
                         
                     }){
                         HStack{
-                            Image(systemName: "icloud.and.arrow.up")
-                            Text("Upload/Create")
+                            Image("CloudPlus")
+                                .resizable()
+                                .frame(width: 70, height: 70)
+                            //Text("Upload/Create")
                         }
                     }
-                    BtnScrollComponent(action: {
-                        
-                    }){
-                        
-                        HStack{
-                            Image(systemName: "checkmark.square")
-                            Text("Select")
-                        }
-                    }
+                    
                     BtnScrollComponent(action: {}){
                         VStack{
                             Picker("Layout", selection: $selectedLayout) {
@@ -94,7 +90,7 @@ struct HorizantalScrollingView: View {
 //                    }
                     
                     }
-                }
+                //}
             ScrollView(showsIndicators: false){
                 LazyVGrid(columns: selectedLayout.columns, spacing: 1) {
                     ForEach(fileList) { list in

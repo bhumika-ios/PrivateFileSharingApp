@@ -30,6 +30,10 @@ struct Login: View{
         NavigationStack{
             VStack{
                 VStack{
+                    Image(systemName: "folder")
+                        .resizable()
+                        .frame(width: 70, height: 60)
+                        .foregroundColor(.green)
                     //MARK:- Text add and set font size
                     TxtHeadingComponent(title: "Welcome Back!")
                     

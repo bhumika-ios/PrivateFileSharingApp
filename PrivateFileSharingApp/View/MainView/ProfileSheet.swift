@@ -17,9 +17,10 @@ struct ProfileSheet: View {
                     .fill(Color.gray)
                     .frame(width: 60, height: 4)
                 HStack{
-                    Image(systemName: "person")
+                    Image("profilePic")
                         .resizable()
-                        .frame(width: 45, height: 45)
+                        .frame(width: 60, height: 60)
+                        .cornerRadius(10)
                         .padding()
                     VStack(alignment: .leading){
                         TxtHeadingComponent(title: "XXX")

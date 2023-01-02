@@ -9,11 +9,16 @@ import SwiftUI
 
 struct RegistrationScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
+    @State var visible = false
+    @State var reVisible = false
     var body: some View {
-        ScrollView{
+        ScrollView(showsIndicators: false){
             VStack{
                 VStack{
-                    
+                    Image(systemName: "folder")
+                        .resizable()
+                        .frame(width: 70, height: 60)
+                        .foregroundColor(.green)
                     TxtHeadingComponent(title: "Create New Account")
                     
                     TxtTagComponent(subTitle: "Please fill registration to create account")
@@ -36,7 +41,7 @@ struct RegistrationScreen: View {
                             TxtErrorComponent(error: fieldVM.namePrompt)
                         }
                         TxtTagComponent(subTitle: "Create Password")
-                        TextFieldComponent(placeHolder: "Password", field:$fieldVM.password, isSecure: true)
+                        TxtSecureComponent(placeHolder: "Password", field:$fieldVM.password, isSecure: true)
                         if !fieldVM.password.isEmpty{
                             TxtErrorComponent(error:fieldVM.passwordPrompt)
                         }
@@ -49,7 +54,7 @@ struct RegistrationScreen: View {
                 }
                 VStack(alignment:.leading){
                     TxtTagComponent(subTitle: "Confirm Password")
-                    TextFieldComponent(
+                    TxtSecureComponent(
                         placeHolder: "Confirm Password",
                         field: $fieldVM.conPassword,
                         isSecure: true)
