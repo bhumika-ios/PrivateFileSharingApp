@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MainFileListView: View {
+struct MainFileView: View {
    
     var body: some View {
         NavigationStack{
@@ -28,8 +28,8 @@ struct MainFileListView: View {
     }
 }
 
-struct MainFileListView_Previews: PreviewProvider {
+struct MainFileView_Previews: PreviewProvider {
     static var previews: some View {
-        MainFileListView()
+        MainFileView()
     }
 }

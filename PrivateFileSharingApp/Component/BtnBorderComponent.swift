@@ -72,3 +72,33 @@ struct BtnTextComponent<WhateverYourWant: View>: View {
     }
 }
 
+struct BtnScrollComponent<WhateverYourWant: View>: View {
+    let action: () -> Void
+    let content: WhateverYourWant
+    
+    init(action: @escaping () -> Void, @ViewBuilder content: () -> WhateverYourWant) {
+        self.action = action
+        self.content = content()
+    }
+    var body: some View {
+        VStack{
+           
+                Button(action: action){
+                    HStack{
+                        content
+                }
+                    .frame(maxWidth: .infinity, maxHeight: 25)
+                    .padding()
+                   
+                    .background(Color("Gray"))
+                    .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
+                   
+                    .foregroundColor(.black)
+                    .font(.custom("Genos-Medium", size: 20))
+                   
+            }
+        }
+      
+    }
+}
+

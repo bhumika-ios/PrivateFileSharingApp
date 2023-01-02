@@ -8,7 +8,7 @@
 import SwiftUI
 
 struct ProfileSheet: View {
-    var edges = UIApplication.shared.windows.first?.safeAreaInsets
+   
     var body: some View {
         VStack(alignment: .leading){
             Spacer()
@@ -34,6 +34,7 @@ struct ProfileSheet: View {
                         .resizable()
                         .frame(width: 25, height: 25)
                 }
+                .padding()
                 ScrollView(.vertical, showsIndicators: false,content: {
                     VStack(alignment: .leading, spacing: 0){
                         HStack{
@@ -41,15 +42,15 @@ struct ProfileSheet: View {
                                 .resizable()
                                 .frame(width: 20, height: 20)
                                 .padding()
-                            TxtHeadingComponent(title: "Files")
+                            TxtTagComponent(subTitle: "Files")
                             
                         }
                         HStack{
                             Image(systemName: "person")
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 20, height: 20)
                                 .padding()
-                            TxtHeadingComponent(title: "Setting")
+                            TxtTagComponent(subTitle:  "Setting")
                             Spacer()
                             
                             Button(action: {}){
@@ -65,10 +66,10 @@ struct ProfileSheet: View {
                             Image(systemName: "gearshape")
                             
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 20, height: 20)
                                 .padding()
                             
-                            TxtHeadingComponent(title: "Administration")
+                            TxtTagComponent(subTitle: "Administration")
                             Spacer()
                             
                             Button(action: {}){
@@ -82,20 +83,20 @@ struct ProfileSheet: View {
                         HStack{
                             Image(systemName: "power")
                                 .resizable()
-                                .frame(width: 30, height: 30)
+                                .frame(width: 20, height: 20)
                                 .padding()
-                            TxtHeadingComponent(title: "Log Out")
+                            TxtTagComponent(subTitle: "Log Out")
                         }
                          
                     }
                     .padding(.horizontal)
                     .padding(.top,10)
                     .padding(.bottom)
-                  //  .padding(.bottom,edges?.bottom)
+                 
                 })
             }
             .padding(.top)
-            .background(BlureView().clipShape(CustomCorner(corners: [.topLeft,.topRight])))
+            .clipShape(CustomCorner(corners: [.topLeft,.topRight]))
         }
         .ignoresSafeArea()
         //.background(Color.black.opacity(0.3).ignoresSafeArea())

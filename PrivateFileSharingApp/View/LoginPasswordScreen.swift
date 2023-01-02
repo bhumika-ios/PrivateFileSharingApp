@@ -58,7 +58,7 @@ struct LoginPassword: View {
                     .padding(.vertical,20)
                 }
                 .navigationDestination(isPresented: $isShowingHome){
-                   MainFileListView()
+                   MainFileView()
                 }
             .padding()
             

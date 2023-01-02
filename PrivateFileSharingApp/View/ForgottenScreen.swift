@@ -12,7 +12,7 @@ struct ForgottenScreen: View {
     @State var isLinkActive = false
    
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 VStack{
                     //MARK:- Text add and set font size
@@ -45,14 +45,18 @@ struct ForgottenScreen: View {
                 VStack{
                     HStack{
                         Text("Remember your password?")
-                        NavigationLink(destination: LoginScreen(), isActive: $isLinkActive){
+                    
                             BtnTextComponent(action: {
                                 self.isLinkActive = true
                             }){
                                 Text("Log In")
                                     .foregroundColor(.green)
                             }
-                        }
+                            
+                        
+                    }
+                    .navigationDestination(isPresented: $isLinkActive){
+                        LoginScreen()
                     }
                 }
             }

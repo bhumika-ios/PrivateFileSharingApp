@@ -9,17 +9,12 @@ import SwiftUI
 
 struct FileGridView: View {
     var fileList: [FileModel] = FileList.list
-//    let layout = [GridItem(.flexible()),
-//                  GridItem(.flexible()),
-//                  GridItem(.flexible())]
+
     let imageName: String
     let title: String
     let uploadingDate: String
     var body: some View {
-//        NavigationView{
-//            ScrollView{
-//            LazyVGrid(columns: layout, spacing: 30){
-//                ForEach(fileList, id: \.id) { fileList in
+
         NavigationStack{
             VStack{
                 Image(imageName)
@@ -27,7 +22,7 @@ struct FileGridView: View {
                     .scaledToFit()
                     .frame(width: 500,height: 80)
                     .cornerRadius(4)
-                Text(title)
+                TxtTagComponent(subTitle: title)
                     .font(.custom("Genos-Regular", size: 24))
                     .fontWeight(.semibold)
                     .lineLimit(2)
@@ -35,16 +30,12 @@ struct FileGridView: View {
                 Text(uploadingDate)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
-                Image("Horizantal3Dots")
+                Image(systemName: "ellipsis")
                     .resizable()
                     .scaledToFit()
+                    .foregroundColor(.green)
                     .frame(width: 20,height: 30)
             }
-            //                    }
-            //                }
-            //
-            //            }
-            //        }
         }
     }
 }
