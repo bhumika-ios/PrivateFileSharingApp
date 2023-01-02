@@ -58,7 +58,7 @@ struct ForgottenScreen: View {
             }
            
         }
-        .navigationBarBackButtonHidden(true)
+      //  .navigationBarBackButtonHidden(true)
     }
 }
 

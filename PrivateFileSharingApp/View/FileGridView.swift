@@ -20,30 +20,32 @@ struct FileGridView: View {
 //            ScrollView{
 //            LazyVGrid(columns: layout, spacing: 30){
 //                ForEach(fileList, id: \.id) { fileList in
-                    VStack{
-                        Image(imageName)
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 500,height: 80)
-                            .cornerRadius(4)
-                        Text(title)
-                            .font(.custom("Genos-Regular", size: 24))
-                            .fontWeight(.semibold)
-                            .lineLimit(2)
-                            .minimumScaleFactor(0.5)
-                        Text(uploadingDate)
-                            .font(.subheadline)
-                            .foregroundColor(.secondary)
-                        Image("Horizantal3Dots")
-                            .resizable()
-                            .scaledToFit()
-                            .frame(width: 20,height: 30)
-                    }
-//                    }
-//                }
-//
-//            }
-//        }
+        NavigationStack{
+            VStack{
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 500,height: 80)
+                    .cornerRadius(4)
+                Text(title)
+                    .font(.custom("Genos-Regular", size: 24))
+                    .fontWeight(.semibold)
+                    .lineLimit(2)
+                    .minimumScaleFactor(0.5)
+                Text(uploadingDate)
+                    .font(.subheadline)
+                    .foregroundColor(.secondary)
+                Image("Horizantal3Dots")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 20,height: 30)
+            }
+            //                    }
+            //                }
+            //
+            //            }
+            //        }
+        }
     }
 }
 

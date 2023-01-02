@@ -8,11 +8,26 @@
 import SwiftUI
 
 struct LoginPasswordScreen: View {
+    var body: some View {
+        VStack{
+            LoginPassword()
+        }
+    }
+}
+
+struct LoginPasswordScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginPasswordScreen()
+    }
+}
+
+struct LoginPassword: View {
     @ObservedObject var fieldVM = FieldViewModel()
     @State var isLinkActive = false
-   
+    @State private var wrongPassword = 0
+    @State var isShowingHome = false
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 VStack{
                     //MARK:- Text add and set font size
@@ -33,7 +48,8 @@ struct LoginPasswordScreen: View {
                 
                 VStack{
                     BtnBorderComponent(action: {
-                        self.fieldVM.passwordConfirm()
+                       // self.fieldVM.passwordConfirm()
+                        authenticatePass(pass: fieldVM.password)
                     }) {
                         Text("Log In ")
                     }
@@ -41,11 +57,15 @@ struct LoginPasswordScreen: View {
                     .disabled(!fieldVM.isPasswordConfirmCompleted)
                     .padding(.vertical,20)
                 }
-                .padding()
+                .navigationDestination(isPresented: $isShowingHome){
+                   MainFileListView()
+                }
+            .padding()
+            
                 VStack{
                     HStack{
                         Text("Forgotten your password?")
-                        NavigationLink(destination: ForgottenScreen(), isActive: $isLinkActive){
+//                        NavigationLink(destination: ForgottenScreen(), isActive: $isLinkActive){
                             BtnTextComponent(action: {
                                 //  ForgottenScreen()
                                 self.isLinkActive = true
@@ -55,7 +75,10 @@ struct LoginPasswordScreen: View {
                                 Text("Reset Password.")
                                     .foregroundColor(.green)
                             }
-                        }
+//                        }
+                    }
+                    .navigationDestination(isPresented: $isLinkActive){
+                        ForgottenScreen()
                     }
                 }
                 
@@ -64,10 +87,20 @@ struct LoginPasswordScreen: View {
         }
         .navigationBarBackButtonHidden(true)
     }
-}
-
-struct LoginPasswordScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginPasswordScreen()
+    func authenticatePass(pass: String) {
+        if pass == "Bhumi@123" {
+            wrongPassword = 0
+            isShowingHome = true
+//            if password.lowercased() == "abc123" {
+//                wrongPassword = 0
+//                showingLoginScreen = true
+////            } else {
+//                wrongPassword = 2
+//            }
+            }else {
+                wrongPassword = 2
+                print("wrong pass")
+        }
     }
 }
+

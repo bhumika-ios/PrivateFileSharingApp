@@ -20,41 +20,42 @@ struct FileListView: View {
 //
 //                VStack{
                     //List(fileList, id: \.id){ fileList in
-        HStack(spacing: 16){
-            Image(imageName)
-                .resizable()
-                .scaledToFit()
-                .frame(height: 60)
-                .cornerRadius(4)
-            VStack(alignment: .leading, spacing: 4){
-                Text(title)
-                    .font(.custom("Genos-Regular", size: 24))
-                    .fontWeight(.semibold)
-                    .lineLimit(2)
-                    .minimumScaleFactor(0.5)
-                Text(uploadingDate)
-                    .font(.subheadline)
-                    .foregroundColor(.secondary)
+        NavigationStack{
+            HStack(spacing: 16){
+                Image(imageName)
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 60)
+                    .cornerRadius(4)
+                VStack(alignment: .leading, spacing: 4){
+                    Text(title)
+                        .font(.custom("Genos-Regular", size: 24))
+                        .fontWeight(.semibold)
+                        .lineLimit(2)
+                        .minimumScaleFactor(0.5)
+                    Text(uploadingDate)
+                        .font(.subheadline)
+                        .foregroundColor(.secondary)
+                }
+                Spacer()
+                Image("3Dots")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(width: 60,height: 30)
+                //.padding()
             }
-            Spacer()
-            Image("3Dots")
-                .resizable()
-                .scaledToFit()
-                .frame(width: 60,height: 30)
-                            //.padding()
-                        }
-                        
-                   // }
-                  //  .listStyle(.inset)
-//                }
-//                //  .navigationTitle("My Files")
-//
-//            }
-//            .padding(.top)
-////            .background(BlureView().clipShape(CustomCorner(corners: [.topLeft,.topRight])))
-//
-//        }
-       
+            
+            // }
+            //  .listStyle(.inset)
+            //                }
+            //                //  .navigationTitle("My Files")
+            //
+            //            }
+            //            .padding(.top)
+            ////            .background(BlureView().clipShape(CustomCorner(corners: [.topLeft,.topRight])))
+            //
+            //        }
+        }
     }
 }
 

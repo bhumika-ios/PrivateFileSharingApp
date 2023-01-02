@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct LoginScreen: View {
-    @ObservedObject var fieldVM = FieldViewModel()
     var body: some View{
         VStack{
             Login()
@@ -25,12 +24,8 @@ struct Login: View{
     @ObservedObject var fieldVM = FieldViewModel()
     @State private var wrongEmail = 0
     @State var isLinkActive = false
-    @EnvironmentObject var userAuth : AuthUser
- //   @State var isCorrect = false
     @State var isLoginPassActive = false
     
-   
-  
     var body: some View {
         NavigationStack{
             VStack{
@@ -63,17 +58,8 @@ struct Login: View{
                 
                         BtnBorderComponent(action: {
                             // self.fieldVM.emailConfirm()
-//                            if(fieldVM.email == "bhumi@gamil.com"){
-//                                fieldVM.isLoggin = true
-//                            } else{
-//                                fieldVM.isLoggin = false
-//                                fieldVM.isCorrect = false
-//                            }
                             authenticateUser(username: fieldVM.email)
-                                
-//                            if authenticateUser(email: fieldVM.email){
-//
-//                            }
+                                                        
                             
                         }) {
                             Text("Next Step ")

@@ -10,7 +10,7 @@ import SwiftUI
 struct MainFileListView: View {
    
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 VStack(alignment: .leading){
                     HeaderView()
