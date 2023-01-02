@@ -23,4 +23,5 @@ enum LayoutType: CaseIterable{
                     GridItem(.flexible())]
         }
     }
+        
 }

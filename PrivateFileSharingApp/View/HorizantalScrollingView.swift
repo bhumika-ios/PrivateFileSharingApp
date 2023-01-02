@@ -52,20 +52,24 @@ struct HorizantalScrollingView: View {
                                        // Text("List")
                                         HStack{
                                             Image(systemName: "list.bullet")
-                                            Text("ListView")
-                                                .foregroundColor(.black)
+                                              
+                                            //Text("ListView")
+                                                
                                         }
-                                        
+                                        .frame(width: 20, height: 20)
                                     case .grid:
                                         HStack{
                                             Image(systemName: "square.grid.3x3")
-                                            Text("GridView")
-                                                .foregroundColor(.black)
+                                         //   Text("GridView")
+                                              
                                         }
                                        // Image(systemName: "square.grid.2*2")
                                     }
+                                       
                                 }
+                              
                             }
+                            .tint(.black)
                             .pickerStyle(.menu)
                            
                         }

@@ -9,11 +9,30 @@ import SwiftUI
 
 struct LoginScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
+    var body: some View{
+        VStack{
+            Login()
+        }
+    }
+}
+
+struct LoginScreen_Previews: PreviewProvider {
+    static var previews: some View {
+        LoginScreen()
+    }
+}
+struct Login: View{
+    @ObservedObject var fieldVM = FieldViewModel()
+    @State private var wrongEmail = 0
     @State var isLinkActive = false
+    @EnvironmentObject var userAuth : AuthUser
+ //   @State var isCorrect = false
     @State var isLoginPassActive = false
+    
+   
   
     var body: some View {
-        NavigationView{
+        NavigationStack{
             VStack{
                 VStack{
                     //MARK:- Text add and set font size
@@ -21,35 +40,60 @@ struct LoginScreen: View {
                     
                     TxtTagComponent(subTitle: "Please type your email to log in")
                     
+//                    if (!fieldVM.isCorrect){
+//                            TxtErrorComponent(error: "Please Enter valid email ")
+//                        }
+                    
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
                     TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
                     if !fieldVM.email.isEmpty{
                         TxtErrorComponent(error: fieldVM.emailPrompt)
+                        
+                   
                     }
                 }
                 .padding()
                 .padding(.vertical,-40)
-                
+                // error
+            
+               
                 VStack{
-                    NavigationLink(destination: LoginPasswordScreen(), isActive: $isLoginPassActive){
+                
                         BtnBorderComponent(action: {
-                            self.fieldVM.emailConfirm()
-                            self.isLoginPassActive = true
+                            // self.fieldVM.emailConfirm()
+//                            if(fieldVM.email == "bhumi@gamil.com"){
+//                                fieldVM.isLoggin = true
+//                            } else{
+//                                fieldVM.isLoggin = false
+//                                fieldVM.isCorrect = false
+//                            }
+                            authenticateUser(username: fieldVM.email)
+                                
+//                            if authenticateUser(email: fieldVM.email){
+//
+//                            }
+                            
                         }) {
                             Text("Next Step ")
                         }
+                        
                         .opacity(fieldVM.isEmailConfirmCompleted ? 1 : 0.6)
                         .disabled(!fieldVM.isEmailConfirmCompleted)
                         .padding(.vertical,20)
-                    }
+//                    NavigationLink(destination: LoginPasswordScreen(), isActive: $isLoginPassActive){
+//                    }
+                    
+                }
+                .navigationDestination(isPresented: $isLoginPassActive){
+                    LoginPasswordScreen()
                 }
                 .padding()
                 VStack{
                     HStack{
                         Text("Don't have an account?")
-                        NavigationLink(destination: RegistrationScreen(), isActive: $isLinkActive){
+//                        NavigationLink(destination: RegistrationScreen(), isActive: $isLinkActive){
                             BtnTextComponent(action: {
                                 self.isLinkActive = true
                             }){
@@ -58,20 +102,37 @@ struct LoginScreen: View {
                                 Text("Register")
                                     .foregroundColor(.green)
                                 
-                            }
+//                            }
+                           
                         }
+                       
+                    
                     }
+                    .navigationDestination(isPresented: $isLinkActive){
+                        RegistrationScreen()
+                    }
+                    
                 }
+           
             }
             
         }
         .navigationBarBackButtonHidden(true)
     
     }
-}
-
-struct LoginScreen_Previews: PreviewProvider {
-    static var previews: some View {
-        LoginScreen()
+    func authenticateUser(username: String) {
+        if username.lowercased() == "bhumi@gmail.com" {
+            wrongEmail = 0
+            isLoginPassActive = true
+//            if password.lowercased() == "abc123" {
+//                wrongPassword = 0
+//                showingLoginScreen = true
+////            } else {
+//                wrongPassword = 2
+//            }
+            }else {
+                wrongEmail = 2
+        }
     }
+    
 }
