@@ -9,7 +9,7 @@ import SwiftUI
 
 struct FileGridView: View {
     var fileList: [FileModel] = FileList.list
-
+    @State var showingBottomSheet = false
     let imageName: String
     let title: String
     let uploadingDate: String
@@ -30,11 +30,21 @@ struct FileGridView: View {
                 Text(uploadingDate)
                     .font(.subheadline)
                     .foregroundColor(.secondary)
+                Button{
+                    showingBottomSheet.toggle()
+    
+            } label: {
                 Image(systemName: "ellipsis")
                     .resizable()
                     .scaledToFit()
                     .foregroundColor(.green)
                     .frame(width: 20,height: 30)
+            }
+            .sheet(isPresented: $showingBottomSheet){
+                MenuSheet()
+                    .presentationDetents([.height(560),.height(560)])
+            }
+               
             }
         }
     }
