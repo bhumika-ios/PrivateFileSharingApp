@@ -12,11 +12,12 @@ struct PrivateFileSharingAppApp: App {
     var body: some Scene {
         WindowGroup {
            // ContentView()
-         LoginScreen()
+     //    LoginScreen()
             //MainFileListView()
           // LoginPasswordScreen()
           //  ForgottenScreen()
             //RegistrationScreen()
+            AddFileView()
         }
     }
 }
