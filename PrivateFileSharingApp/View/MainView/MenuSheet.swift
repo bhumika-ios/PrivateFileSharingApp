@@ -8,6 +8,8 @@
 import SwiftUI
 
 struct MenuSheet: View {
+    @State var showingRenameSheet = false
+    @State var showAddFile = false
     var body: some View {
         VStack(alignment: .leading){
            // Spacer()
@@ -43,31 +45,53 @@ struct MenuSheet: View {
                     .padding(.vertical,-10)
                // ScrollView(.vertical, showsIndicators: false,content: {
                     VStack(alignment: .leading, spacing: 0){
-                        HStack{
-                            Image(systemName: "plus.app")
-                            
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .padding()
-                            TxtTagComponent(subTitle: "Add To File")
-                            
+                        Button(action: {
+                            showAddFile.toggle()
+                        }){
+                            HStack{
+                                Image(systemName: "plus.app")
+                                
+                                    .resizable()
+                                    .foregroundColor(.black)
+                                    .frame(width: 20, height: 20)
+                                    .padding()
+                                TxtTagComponent(subTitle: "Add To File")
+                                    .foregroundColor(.black)
+                                
+                            }
                         }
-                        HStack{
-                            Image(systemName: "pencil")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .padding()
-                            TxtTagComponent(subTitle:  "Rename")
-                            Spacer()
-                            
-//                            Button(action: {}){
-//                                Image(systemName: "chevron.forward")
-//                                    .resizable()
-//                                    .frame(width: 8, height: 18)
-//                                    .foregroundColor(.gray)
-//                            }
-                            
+                        .sheet(isPresented: $showAddFile){
+                            AddFileView()
+                                .presentationDetents([.large,.large])
                         }
+                       
+                        Button(action: {
+                            showingRenameSheet.toggle()
+                        }){
+                            HStack{
+                                Image(systemName: "pencil")
+                                    .resizable()
+                                    .foregroundColor(.black)
+                                    .frame(width: 20, height: 20)
+                                    .padding()
+                                TxtTagComponent(subTitle:  "Rename")
+                                    .foregroundColor(.black)
+                               // Spacer()
+                                
+    //                            Button(action: {}){
+    //                                Image(systemName: "chevron.forward")
+    //                                    .resizable()
+    //                                    .frame(width: 8, height: 18)
+    //                                    .foregroundColor(.gray)
+    //                            }
+                                
+                            }
+                        }
+                        .sheet(isPresented: $showingRenameSheet){
+                            RenameFileView()
+                                .presentationDetents([.large,.large])
+                        }
+                        
                         HStack{
                             
 

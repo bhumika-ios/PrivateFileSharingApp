@@ -14,6 +14,7 @@ class FieldViewModel: ObservableObject{
     @Published var isLoggin: Bool = false
     @Published var isCorrect : Bool = true
     @Published var name = ""
+    @Published var reName = ""
     
     
     // MARK: - Validation Functions
