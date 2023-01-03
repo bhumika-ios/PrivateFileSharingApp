@@ -13,6 +13,7 @@ class FieldViewModel: ObservableObject{
     @Published var conPassword = ""
     @Published var isLoggin: Bool = false
     @Published var isCorrect : Bool = true
+    @Published var name = ""
     
     
     // MARK: - Validation Functions
