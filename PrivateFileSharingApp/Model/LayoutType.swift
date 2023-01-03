@@ -25,3 +25,13 @@ enum LayoutType: CaseIterable{
     }
         
 }
+enum menuType: CaseIterable{
+    case addToFile
+    case rename
+    case move
+    case delete
+    case share
+    case fileRequiest
+    case details
+    case download
+}

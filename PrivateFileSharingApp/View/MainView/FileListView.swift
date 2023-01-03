@@ -13,6 +13,7 @@ struct FileListView: View {
     let imageName: String
     let title: String
     let uploadingDate: String
+    @State var showingBottomSheet = false
     var body: some View {
 
         NavigationStack{
@@ -32,10 +33,21 @@ struct FileListView: View {
                         .foregroundColor(.secondary)
                 }
                 Spacer()
-                Image("3Dots")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(width: 60,height: 30)
+                
+                    Button{
+                        showingBottomSheet.toggle()
+        
+                } label: {
+                    Image("3Dots")
+                        .resizable()
+                        .scaledToFit()
+                        .frame(width: 60,height: 30)
+                }
+                .sheet(isPresented: $showingBottomSheet){
+                    MenuSheet()
+                        .presentationDetents([.height(560),.height(560)])
+                }
+               
                 //.padding()
             }
         }
