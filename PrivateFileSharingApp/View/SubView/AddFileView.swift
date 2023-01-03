@@ -38,5 +38,24 @@ struct AddFileView_Previews: PreviewProvider {
 }
 
 struct EmojiView : View{
-    
+    var body: some View{
+        ScrollView(.vertical, showsIndicators: false){
+            VStack(spacing: 15){
+                Text("")
+            }
+        }
+    }
+    func getEmojiList()->[[Int]]{
+        var emojies : [[Int]] = []
+        
+        for i in 0x1F601...0x1F64F{
+            var temp : [Int] = []
+            
+            for j in i...i+3{
+                temp.append(j)
+            }
+            emojies.append(temp)
+        }
+        return emojies
+    }
 }
