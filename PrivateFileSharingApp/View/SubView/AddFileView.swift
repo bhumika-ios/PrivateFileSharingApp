@@ -9,9 +9,8 @@ import SwiftUI
 
 struct AddFileView: View {
     @ObservedObject var fieldVM = FieldViewModel()
+   // @Binding var show : Bool
     var body: some View {
-        ZStack{
-           
             VStack(alignment:.leading){
                 HStack{
                     TxtHeadingComponent(title: "Create Folder")
@@ -46,7 +45,7 @@ struct AddFileView: View {
                          }
                        
                         .frame(width:150 ,height:50)
-                        
+                        .foregroundColor(.green)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(4), lineWidth: 2))
                     }
                 }
@@ -57,7 +56,7 @@ struct AddFileView: View {
           
         }
        // .background(Color("Gray").edgesIgnoringSafeArea(.all))
-    }
+    
 }
 
 struct AddFileView_Previews: PreviewProvider {
