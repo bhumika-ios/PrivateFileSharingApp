@@ -46,6 +46,8 @@ struct Login: View{
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
+                    TxtTagComponent(subTitle: "Email")
+                        .padding(.vertical,1)
                     TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
                     if !fieldVM.email.isEmpty{
                         TxtErrorComponent(error: fieldVM.emailPrompt)
@@ -108,6 +110,7 @@ struct Login: View{
             
         }
         .navigationBarBackButtonHidden(true)
+        .tint(.black)
     
     }
     func authenticateUser(username: String) {

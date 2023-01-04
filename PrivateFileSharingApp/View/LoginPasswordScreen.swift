@@ -43,6 +43,8 @@ struct LoginPassword: View {
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
+                    TxtTagComponent(subTitle: "Create Password")
+                        .padding(.vertical,1)
                   TxtSecureComponent(placeHolder: "Password", field: $fieldVM.password)
                     if !fieldVM.password.isEmpty{
                         TxtErrorComponent(error: fieldVM.passwordPrompt)
@@ -91,6 +93,7 @@ struct LoginPassword: View {
           
         }
        // .navigationBarBackButtonHidden(true)
+        
     }
     func authenticatePass(pass: String) {
         if pass == "Bhumi@123" {

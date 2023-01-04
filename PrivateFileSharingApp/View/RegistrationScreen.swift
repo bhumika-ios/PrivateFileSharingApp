@@ -11,7 +11,8 @@ struct RegistrationScreen: View {
     @ObservedObject var fieldVM = FieldViewModel()
     @State var visible = false
     @State var reVisible = false
-    @State private var showAlert = false
+    @State var showAlert = false
+    @State var isLinkActive = false
    
     var body: some View {
         ScrollView(showsIndicators: false){
@@ -26,10 +27,11 @@ struct RegistrationScreen: View {
                     TxtTagComponent(subTitle: "Please fill registration to create account")
                     
                 }
-                .padding(.vertical,60)
+                .padding(.vertical,5)
                 Group{
                     VStack(alignment:.leading){
                         TxtTagComponent(subTitle: "Email")
+                            .padding(.vertical,1)
                         TextFieldComponent(
                             placeHolder: "Email Address",
                             field: $fieldVM.email
@@ -38,11 +40,13 @@ struct RegistrationScreen: View {
                             TxtErrorComponent(error: fieldVM.emailPrompt)
                         }
                         TxtTagComponent(subTitle: "Full Name")
+                            .padding(.vertical,1)
                         TextFieldComponent(placeHolder: "Full Name", field: $fieldVM.fullName)
                         if !fieldVM.fullName.isEmpty{
                             TxtErrorComponent(error: fieldVM.namePrompt)
                         }
                         TxtTagComponent(subTitle: "Create Password")
+                            .padding(.vertical,1)
                         TxtSecureComponent(placeHolder: "Password", field:$fieldVM.password, isSecure: true)
                         if !fieldVM.password.isEmpty{
                             TxtErrorComponent(error:fieldVM.passwordPrompt)
@@ -56,6 +60,7 @@ struct RegistrationScreen: View {
                 }
                 VStack(alignment:.leading){
                     TxtTagComponent(subTitle: "Confirm Password")
+                        .padding(.vertical,1)
                     TxtSecureComponent(
                         placeHolder: "Confirm Password",
                         field: $fieldVM.conPassword,
@@ -84,11 +89,13 @@ struct RegistrationScreen: View {
                         }
                     }
                 }
-                .padding(.vertical,10)
+                .padding(.vertical,25)
+                //.padding(.vertical,10)
                 VStack{
                                     BtnBorderComponent(action: {
                                         self.fieldVM.confirm()
                                             showAlert = true
+                                        
                                         
                                     }) {
                                         Text("Next Step ")
@@ -97,10 +104,19 @@ struct RegistrationScreen: View {
                                     .disabled(!fieldVM.isConfirmCompleted)
                                     .padding(.vertical,20)
                     
-                                    .alert(isPresented: $showAlert){
-                                        Alert(title: Text("Successfully Register"))
+                                    .alert(isPresented: $showAlert, content: {
+                                        Alert(title: Text("Successfully Registration"), primaryButton: .default(Text("Back To Login"), action: {
+                                            self.isLinkActive = true
+                                        }), secondaryButton: .cancel(Text("Ok")))
+                                    })
+                                    .navigationDestination(isPresented: $isLinkActive){
+                                        LoginScreen()
                                     }
+//                    if showAlert{
+//                        CustomAlert(show: $showAlert)
+//                    }
                 }
+                .padding(.vertical,-25)
                 
                 
                 
@@ -113,5 +129,42 @@ struct RegistrationScreen: View {
 struct RegistrationScreen_Previews: PreviewProvider {
     static var previews: some View {
         RegistrationScreen()
+    }
+}
+struct CustomAlert : View{
+    @Binding var show : Bool
+    @State var isLinkActive = false
+    var body: some View{
+        //NavigationView{
+            ZStack(alignment: Alignment(horizontal: .trailing, vertical: .top)){
+                VStack(spacing: 25){
+                    Text("Successfully Registration")
+                        .foregroundColor(.green)
+                    Divider()
+                    Button(action: {
+                        self.isLinkActive = true
+                    }){
+                        
+                        Text("Back To LogIn")
+                            .foregroundColor(.black)
+                            .fontWeight(.bold)
+                            .padding(.vertical,-5)
+                            .padding(.horizontal,20)
+                    }
+                    .navigationDestination(isPresented: $isLinkActive){
+                        LoginScreen()
+                    }
+                }
+                .padding(.vertical, 25)
+                .padding(.horizontal,30)
+                
+                .background(.white)
+                .cornerRadius(25)
+                .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(4), lineWidth: 2))
+                //.fixedSize(horizontal: false, vertical: true)
+            }
+            .padding()
+            .offset(y:-450)
+      //  }
     }
 }

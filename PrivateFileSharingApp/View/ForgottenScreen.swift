@@ -27,6 +27,8 @@ struct ForgottenScreen: View {
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
+                    TxtTagComponent(subTitle: "Email")
+                        .padding(.vertical,1)
                     TextFieldComponent(placeHolder: "Type your E-mail", field: $fieldVM.email)
                     if !fieldVM.email.isEmpty{
                         TxtErrorComponent(error: fieldVM.emailPrompt)
@@ -66,7 +68,8 @@ struct ForgottenScreen: View {
             }
            
         }
-      //  .navigationBarBackButtonHidden(true)
+       //.navigationBarBackButtonHidden(true)
+        .tint(.black)
     }
 }
 
