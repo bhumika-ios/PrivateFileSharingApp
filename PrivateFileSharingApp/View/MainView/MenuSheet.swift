@@ -14,9 +14,9 @@ struct MenuSheet: View {
         VStack(alignment: .leading){
            // Spacer()
             VStack(spacing:12){
-//                Capsule()
-//                    .fill(Color.gray)
-//                    .frame(width: 60, height: 4)
+                Capsule()
+                    .fill(Color.gray)
+                    .frame(width: 60, height: 4)
                 HStack{
                     Image(systemName: "folder.fill")
                     

@@ -9,6 +9,8 @@ import SwiftUI
 
 struct ProfileSheet: View {
     @State var showingBottomSheet = false
+    @State var isLinkActive = true
+    @EnvironmentObject var setting: AuthUser
     var body: some View {
         VStack(alignment: .leading){
             Spacer()
@@ -89,11 +91,15 @@ struct ProfileSheet: View {
                             
                         }
                         HStack{
-                            Image(systemName: "power")
-                                .resizable()
-                                .frame(width: 20, height: 20)
-                                .padding()
-                            TxtTagComponent(subTitle: "Log Out")
+                            Button(action: {
+                                setting.isLoggin = false
+                            }){
+                                Image(systemName: "power")
+                                    .resizable()
+                                    .frame(width: 20, height: 20)
+                                    .padding()
+                                TxtTagComponent(subTitle: "Log Out")
+                            }
                         }
                          
                     }

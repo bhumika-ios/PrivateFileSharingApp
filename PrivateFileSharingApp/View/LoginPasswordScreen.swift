@@ -26,8 +26,18 @@ struct LoginPassword: View {
     @State var isLinkActive = false
     @State private var wrongPassword = 0
     @State var isShowingHome = false
+    @EnvironmentObject var setting: AuthUser
     var body: some View {
+        if setting.isLogginPass{
+            MainFileView()
+                .environmentObject(setting)
+        } else{
+            if UserDefaults.standard.bool(forKey: "loginPass") == true{
+                MainFileView()
+                    .environmentObject(setting)
+            }else{
         NavigationStack{
+          
             VStack{
                 VStack{
                     Image("profilePic")
@@ -64,32 +74,35 @@ struct LoginPassword: View {
                     .disabled(!fieldVM.isPasswordConfirmCompleted)
                     .padding(.vertical,20)
                 }
-                .navigationDestination(isPresented: $isShowingHome){
-                   MainFileView()
-                }
+//                .navigationDestination(isPresented: $isShowingHome){
+//                   MainFileView()
+//                }
             .padding()
             
                 VStack{
                     HStack{
                         Text("Forgotten your password?")
-//                        NavigationLink(destination: ForgottenScreen(), isActive: $isLinkActive){
-                            BtnTextComponent(action: {
-                                //  ForgottenScreen()
-                                self.isLinkActive = true
-                            }){
-                                
-                                
-                                Text("Reset Password.")
-                                    .foregroundColor(.green)
-                            }
-//                        }
+                        //                        NavigationLink(destination: ForgottenScreen(), isActive: $isLinkActive){
+                        BtnTextComponent(action: {
+                            //  ForgottenScreen()
+                            self.isLinkActive = true
+                        }){
+                            
+                            
+                            Text("Reset Password.")
+                                .foregroundColor(.green)
+                        }
                     }
+                        //                        }
+                   
                     .navigationDestination(isPresented: $isLinkActive){
                         ForgottenScreen()
                     }
                 }
                 
             }
+        }
+        }
           
         }
        // .navigationBarBackButtonHidden(true)
@@ -98,7 +111,8 @@ struct LoginPassword: View {
     func authenticatePass(pass: String) {
         if pass == "Bhumi@123" {
             wrongPassword = 0
-            isShowingHome = true
+           // isShowingHome = true
+            setting.isLogginPass = true
 //            if password.lowercased() == "abc123" {
 //                wrongPassword = 0
 //                showingLoginScreen = true

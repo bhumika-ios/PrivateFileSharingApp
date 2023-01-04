@@ -25,107 +25,114 @@ struct Login: View{
     @State private var wrongEmail = 0
     @State var isLinkActive = false
     @State var isLoginPassActive = false
+    @EnvironmentObject var setting: AuthUser
     
     var body: some View {
-        NavigationStack{
-            VStack{
-                VStack{
-                    Image(systemName: "folder")
-                        .resizable()
-                        .frame(width: 70, height: 60)
-                        .foregroundColor(.green)
-                    //MARK:- Text add and set font size
-                    TxtHeadingComponent(title: "Welcome Back!")
-                    
-                    TxtTagComponent(subTitle: "Please type your email to log in")
-                    
-//                    if (!fieldVM.isCorrect){
-//                            TxtErrorComponent(error: "Please Enter valid email ")
-//                        }
-                    
-                }
-                .padding(.vertical,80)
-                VStack(alignment: .leading){
-                    TxtTagComponent(subTitle: "Email")
-                        .padding(.vertical,1)
-                    TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
-                    if !fieldVM.email.isEmpty{
-                        TxtErrorComponent(error: fieldVM.emailPrompt)
-                        
-                   
-                    }
-                }
-                .padding()
-                .padding(.vertical,-40)
-                // error
-            
-               
-                VStack{
-                
-                        BtnBorderComponent(action: {
-                            // self.fieldVM.emailConfirm()
-                            authenticateUser(username: fieldVM.email)
-                                                        
+       
+            NavigationStack{
+                if setting.isLoggin{
+                    LoginPassword()
+                } else{
+                    VStack{
+                        VStack{
+                            Image(systemName: "folder")
+                                .resizable()
+                                .frame(width: 70, height: 60)
+                                .foregroundColor(.green)
+                            //MARK:- Text add and set font size
+                            TxtHeadingComponent(title: "Welcome Back!")
                             
-                        }) {
-                            Text("Next Step ")
+                            TxtTagComponent(subTitle: "Please type your email to log in")
+                            
+                            //                    if (!fieldVM.isCorrect){
+                            //                            TxtErrorComponent(error: "Please Enter valid email ")
+                            //                        }
+                            
+                        }
+                        .padding(.vertical,80)
+                        VStack(alignment: .leading){
+                            TxtTagComponent(subTitle: "Email")
+                                .padding(.vertical,1)
+                            TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
+                            if !fieldVM.email.isEmpty{
+                                TxtErrorComponent(error: fieldVM.emailPrompt)
+                                
+                                
+                            }
+                        }
+                        .padding()
+                        .padding(.vertical,-40)
+                        // error
+                        
+                        
+                        VStack{
+                            
+                            BtnBorderComponent(action: {
+                                // self.fieldVM.emailConfirm()
+                                authenticateUser(username: fieldVM.email)
+                                
+                                
+                            }) {
+                                Text("Next Step ")
+                            }
+                            
+                            .opacity(fieldVM.isEmailConfirmCompleted ? 1 : 0.6)
+                            .disabled(!fieldVM.isEmailConfirmCompleted)
+                            .padding(.vertical,20)
+                            //                    NavigationLink(destination: LoginPasswordScreen(), isActive: $isLoginPassActive){
+                            //                    }
+                            
+                        }
+                        //                    .navigationDestination(isPresented: $isLoginPassActive){
+                        //                        LoginPasswordScreen()
+                        //                    }
+                        .padding()
+                        VStack{
+                            HStack{
+                                Text("Don't have an account?")
+                                //                        NavigationLink(destination: RegistrationScreen(), isActive: $isLinkActive){
+                                BtnTextComponent(action: {
+                                    self.isLinkActive = true
+                                }){
+                                    
+                                    
+                                    Text("Register")
+                                        .foregroundColor(.green)
+                                    
+                                    //                            }
+                                    
+                                }
+                                
+                                
+                            }
+                            .navigationDestination(isPresented: $isLinkActive){
+                                RegistrationScreen()
+                            }
+                            
                         }
                         
-                        .opacity(fieldVM.isEmailConfirmCompleted ? 1 : 0.6)
-                        .disabled(!fieldVM.isEmailConfirmCompleted)
-                        .padding(.vertical,20)
-//                    NavigationLink(destination: LoginPasswordScreen(), isActive: $isLoginPassActive){
-//                    }
-                    
-                }
-                .navigationDestination(isPresented: $isLoginPassActive){
-                    LoginPasswordScreen()
-                }
-                .padding()
-                VStack{
-                    HStack{
-                        Text("Don't have an account?")
-//                        NavigationLink(destination: RegistrationScreen(), isActive: $isLinkActive){
-                            BtnTextComponent(action: {
-                                self.isLinkActive = true
-                            }){
-                                
-                                
-                                Text("Register")
-                                    .foregroundColor(.green)
-                                
-//                            }
-                           
-                        }
-                       
-                    
                     }
-                    .navigationDestination(isPresented: $isLinkActive){
-                        RegistrationScreen()
-                    }
-                    
                 }
-           
             }
-            
+            .navigationBarBackButtonHidden(true)
+            .tint(.black)
+        
         }
-        .navigationBarBackButtonHidden(true)
-        .tint(.black)
-    
-    }
-    func authenticateUser(username: String) {
-        if username.lowercased() == "bhumi@gmail.com" {
-            wrongEmail = 0
-            isLoginPassActive = true
-//            if password.lowercased() == "abc123" {
-//                wrongPassword = 0
-//                showingLoginScreen = true
-////            } else {
-//                wrongPassword = 2
-//            }
+        func authenticateUser(username: String) {
+            if username.lowercased() == "bhumi@gmail.com" {
+                wrongEmail = 0
+                // isLoginPassActive = true
+                setting.isLoggin = true
+                //            if password.lowercased() == "abc123" {
+                //                wrongPassword = 0
+                //                showingLoginScreen = true
+                ////            } else {
+                //                wrongPassword = 2
+                //            }
             }else {
                 wrongEmail = 2
+            }
         }
-    }
+    
     
 }

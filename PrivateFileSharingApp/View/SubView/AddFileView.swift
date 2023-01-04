@@ -11,6 +11,11 @@ struct AddFileView: View {
     @ObservedObject var fieldVM = FieldViewModel()
    // @Binding var show : Bool
     var body: some View {
+        VStack{
+            Spacer()
+            Capsule()
+                .fill(Color.gray)
+                .frame(width: 60, height: 4)
             VStack(alignment:.leading){
                 HStack{
                     TxtHeadingComponent(title: "Create Folder")
@@ -24,26 +29,26 @@ struct AddFileView: View {
                     TextFieldComponent(placeHolder: "Folder name", field: $fieldVM.name)
                     
                     TxtTagComponent(subTitle: "Emojies as an Icon :")
-//                    GeometryReader{_ in
-//                        Text("")
-//                    }
-//                    EmojiView()
+                    //                    GeometryReader{_ in
+                    //                        Text("")
+                    //                    }
+                    //                    EmojiView()
                 }
                 Spacer()
                 VStack{
                     HStack{
-                       Button(action: {}){
+                        Button(action: {}){
                             TxtTagComponent(subTitle: "Cancel")
                         }
-                       .foregroundColor(.black)
-                       .frame(width:150 ,height:50)
-                       
-                       .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(4), lineWidth: 2))
+                        .foregroundColor(.black)
+                        .frame(width:150 ,height:50)
+                        
+                        .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(4), lineWidth: 2))
                         Spacer()
                         Button(action: {}){
-                             TxtTagComponent(subTitle: "Save Folder")
-                         }
-                       
+                            TxtTagComponent(subTitle: "Save Folder")
+                        }
+                        
                         .frame(width:150 ,height:50)
                         .foregroundColor(.green)
                         .overlay(RoundedRectangle(cornerRadius: 8).stroke(Color.black.opacity(4), lineWidth: 2))
@@ -53,10 +58,10 @@ struct AddFileView: View {
                 
             }
             .padding()
-          
+            
         }
-       // .background(Color("Gray").edgesIgnoringSafeArea(.all))
-    
+        // .background(Color("Gray").edgesIgnoringSafeArea(.all))
+    }
 }
 
 struct AddFileView_Previews: PreviewProvider {
