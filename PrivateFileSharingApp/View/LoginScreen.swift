@@ -25,6 +25,7 @@ struct LoginScreen_Previews: PreviewProvider {
 struct Login: View{
     @ObservedObject var fieldVM = FieldViewModel()
     @State private var wrongEmail = 0
+    @State private var error = ""
     @State var isLinkActive = false
     @State var isLoginPassActive = false
     @EnvironmentObject var setting: AuthUser
@@ -43,10 +44,10 @@ struct Login: View{
 //                    }else{
                         VStack{
                             VStack{
-                                Image(systemName: "folder")
+                                Image("PrivateLogo")
                                     .resizable()
-                                    .frame(width: 70, height: 60)
-                                    .foregroundColor(.black)
+                                    .frame(width: 80, height: 80)
+                                    .foregroundColor(.green)
                                 //MARK:- Text add and set font size
                                 TxtHeadingComponent(title: "Welcome Back!")
                                 
@@ -59,6 +60,9 @@ struct Login: View{
                             }
                             .padding(.vertical,80)
                             VStack(alignment: .leading){
+                                if !fieldVM.email.isEmpty{
+                                    TxtErrorComponent(error: error)
+                                }
                                 TxtTagComponent(subTitle: "Email")
                                     .padding(.vertical,1)
                                 TextFieldComponent(placeHolder: "Email Address", field: $fieldVM.email)
@@ -140,6 +144,14 @@ struct Login: View{
             //            }
         }else {
             wrongEmail = 2
+            self.error = "Please enter correct email"
+        
+//                if wrongEmail == 2{
+//                    self.error = ""
+//                } else {
+//                    self.error = "Enter valid Name"
+//
+//            }
         }
         
         

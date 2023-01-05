@@ -26,6 +26,7 @@ struct LoginPassword: View {
     @State var isLinkActive = false
     @State private var wrongPassword = 0
     @State var isShowingHome = false
+    @State private var error = ""
     @EnvironmentObject var setting: AuthUser
     var body: some View {
         if setting.isLogginPass{
@@ -53,6 +54,9 @@ struct LoginPassword: View {
                 }
                 .padding(.vertical,80)
                 VStack(alignment: .leading){
+                    if !fieldVM.password.isEmpty{
+                        TxtErrorComponent(error: error)
+                    }
                     TxtTagComponent(subTitle: "Create Password")
                         .padding(.vertical,1)
                   TxtSecureComponent(placeHolder: "Password", field: $fieldVM.password)
@@ -121,7 +125,7 @@ struct LoginPassword: View {
 //            }
             }else {
                 wrongPassword = 2
-                print("wrong pass")
+                self.error = "Please enter correct password"
         }
     }
 }
