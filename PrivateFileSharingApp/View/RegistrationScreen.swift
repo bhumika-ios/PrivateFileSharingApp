@@ -18,9 +18,9 @@ struct RegistrationScreen: View {
         ScrollView(showsIndicators: false){
             VStack{
                 VStack{
-                    Image(systemName: "folder")
+                    Image("PrivateLogo")
                         .resizable()
-                        .frame(width: 70, height: 60)
+                        .frame(width: 80, height: 80)
                         .foregroundColor(.green)
                     TxtHeadingComponent(title: "Create New Account")
                     

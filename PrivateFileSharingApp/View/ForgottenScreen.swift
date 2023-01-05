@@ -19,9 +19,9 @@ struct ForgottenScreen: View {
 //            }else{
                 VStack{
                     VStack{
-                        Image(systemName: "folder")
+                        Image("PrivateLogo")
                             .resizable()
-                            .frame(width: 70, height: 60)
+                            .frame(width: 80, height: 80)
                             .foregroundColor(.green)
                         //MARK:- Text add and set font size
                         TxtHeadingComponent(title: "Forgotten Password?")
