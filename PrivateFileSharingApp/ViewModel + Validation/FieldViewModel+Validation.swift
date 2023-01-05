@@ -7,8 +7,8 @@
 
 import Foundation
 class FieldViewModel: ObservableObject{
-    @Published var email = ""
-    @Published var password = ""
+    @Published var email = "bhumi@gmail.com"
+    @Published var password = "Bhumi@123"
     @Published var fullName = ""
     @Published var conPassword = ""
     @Published var isLoggin: Bool = false
