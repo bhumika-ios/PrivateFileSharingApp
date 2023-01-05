@@ -105,9 +105,9 @@ struct RegistrationScreen: View {
                                     .padding(.vertical,20)
                     
                                     .alert(isPresented: $showAlert, content: {
-                                        Alert(title: Text("Successfully Registration"), primaryButton: .default(Text("Back To Login"), action: {
+                                        Alert(title: Text("Successfully Registration"), dismissButton: .default(Text("Ok"), action: {
                                             self.isLinkActive = true
-                                        }), secondaryButton: .cancel(Text("Ok")))
+                                        }))
                                     })
                                     .navigationDestination(isPresented: $isLinkActive){
                                         LoginScreen()
