@@ -92,7 +92,9 @@ struct ProfileSheet: View {
                         }
                         HStack{
                             Button(action: {
+                                
                                 setting.isLoggin = false
+                                setting.isLogginPass = false
                             }){
                                 Image(systemName: "power")
                                     .resizable()

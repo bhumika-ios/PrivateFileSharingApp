@@ -12,7 +12,8 @@ struct PrivateFileSharingAppApp: App {
     var body: some Scene {
         WindowGroup {
            // ContentView()
-            LoginScreen()
+//            LoginScreen()
+            ConnectionView()
                 .environmentObject(AuthUser())
             //MainFileListView()
           // LoginPasswordScreen()
